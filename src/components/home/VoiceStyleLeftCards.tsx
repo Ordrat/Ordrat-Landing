@@ -1,7 +1,7 @@
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import eLearningImage from '@public/images/ns-img-542.png';
 import customerSupportImage from '@public/images/ns-img-543.png';
-import videoNarrationImage from '@public/images/ns-img-544.png';
+import videoNarrationImage from '@public/home/FeaturesV1/e-marketing.png';
 import podcastingImage from '@public/images/ns-img-545.png';
 import Image from 'next/image';
 

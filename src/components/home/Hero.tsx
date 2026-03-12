@@ -1,83 +1,90 @@
+'use client';
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
-import LinkButton from '@/components/ui/button/Button';
-import HeroVideoBackground from './HeroVideoBackground';
-import HeroVoiceSVG from './HeroVoiceSVG';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
     <section
-      className="lp:pt-[254px] relative overflow-hidden pt-[170px] pb-12 lg:pb-24"
-      aria-label="AI Voice Generator Hero Section">
-      {/* Video Background */}
-      <HeroVideoBackground />
-
-      <div className="main-container relative z-10">
-        <div className="lp:space-y-34 space-y-10 md:space-y-15">
-          {/* content  */}
-          <div className="mx-auto space-y-10 text-center lg:space-y-14">
-            {/* text groups */}
-            <div className="space-y-3 text-center">
-              {/* badge and text */}
-              <div className="space-y-5">
-                {/* badge  */}
-                <RevealAnimation instant delay={0.1}>
-                  <span className="badge badge-metal text-accent/80" aria-label="Product Hunt announcement badge">
-                    We're live on productHunt
-                  </span>
-                </RevealAnimation>
-                {/* main text  */}
-                <RevealAnimation instant delay={0.2}>
-                  <h1 className="text-accent lg:text-heading-1 text-heading-3 mx-auto max-w-[350px] leading-[110%] lg:max-w-[500px]">
-                    Your voice, reinvented by AI.
-                  </h1>
-                </RevealAnimation>
-              </div>
-              <RevealAnimation instant delay={0.3}>
-                <p className="text-accent/80 mx-auto max-w-[465px]" aria-label="AI Voice Generator description">
-                  Bring your words to life with ultra-realistic AI voices powered by deep learning. Perfect for videos,
-                  podcasts, ads, and more.
-                </p>
-              </RevealAnimation>
-            </div>
-
-            {/* btns  */}
-            <div className="space-y-7" aria-label="Call to action buttons">
-              <div
-                className="flex flex-col items-center justify-center gap-y-4 md:flex-row md:gap-x-4 md:gap-y-0"
-                aria-label="Primary action buttons">
-                <RevealAnimation instant delay={0.4} direction="left" offset={50}>
-                  <div className="w-[85%] md:w-auto">
-                    <LinkButton
-                      href="/signup"
-                      btnClass="btn-lg-v2 lg:btn-xl-v2 btn-v2-white border-0 group-hover/btn-v2:btn-primary-v2">
-                      Get started
-                    </LinkButton>
-                  </div>
-                </RevealAnimation>
-                <RevealAnimation instant delay={0.5} direction="left" offset={50}>
-                  <div className="w-[85%] md:w-auto">
-                    <LinkButton
-                      href="/pricing"
-                      btnClass="btn-lg-v2 lg:btn-xl-v2 btn-v2-accent group-hover/btn-v2:btn-secondary-v2">
-                      Download the app
-                    </LinkButton>
-                  </div>
+      className="pt-30 max-[1920px]:px-5 md:pt-34 lg:pt-36">
+      <div
+        className="bg-background-12 border-background-12 relative mx-auto -mb-2 max-w-470 overflow-hidden border pt-18 md:pt-24 xl:rounded-4xl">
+        <div className="main-container relative z-10">
+          <div className="lp:space-y-34 space-y-10 md:space-y-15">
+            <div className="mx-auto space-y-10 text-center lg:space-y-14">
+              <div className="space-y-3 text-center">
+                <div className="space-y-5">
+                  <RevealAnimation instant delay={0.1}>
+                    <span className="badge bg-ordrat-red-main text-accent/80" aria-label="Trusted worldwide badge">
+                      Trusted worldwide in over 30 countries
+                    </span>
+                  </RevealAnimation>
+                  <RevealAnimation instant delay={0.2}>
+                    <h1 className="lg:text-heading-2 text-heading-3 mx-auto max-w-87.5 font-bold leading-[110%] text-ordrat-blue-main sm:max-w-140 lg:max-w-230">
+                      <span className="relative inline-flex flex-wrap items-start justify-center gap-x-1 gap-y-1 sm:flex-nowrap sm:gap-x-0.5">
+                        {/* Head decoration SVG */}
+                        <Image
+                          src="/home/hero/head.svg"
+                          alt=""
+                          width={45}
+                          height={39}
+                          className="-mr-1 w-5 -translate-y-3 -rotate-45 sm:-mr-2 sm:w-8 lg:w-10 lg:-translate-y-4"
+                          aria-hidden="true"
+                        />
+                        <span>Create online store and QR Menu</span>
+                      </span>
+                      <span className="mt-1 mb-4 block lg:mt-2 lg:mb-10">
+                        Fast and easy with{' '}
+                        <span className="relative inline-block text-ordrat-red-main">
+                          Ordrat
+                          {/* Underline SVG */}
+                          <Image
+                            src="/home/hero/line.svg"
+                            alt=""
+                            width={335}
+                            height={34}
+                            className="absolute -bottom-2 left-0 w-full sm:-bottom-3 lg:-bottom-4"
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </span>
+                    </h1>
+                  </RevealAnimation>
+                </div>
+                <RevealAnimation instant delay={0.3}>
+                  <p className="mx-auto mt-6 max-w-175 text-[#4A4A4A] flex flex-wrap items-center justify-center gap-x-1 text-center text-base leading-7 sm:max-w-240 lg:max-w-295">
+                    We make your work more organized and easier with many modern features for{' '}
+                    <span className="text-ordrat-red-main">managing your online store</span>
+                  </p>
                 </RevealAnimation>
               </div>
-              <RevealAnimation instant delay={0.6}>
-                <i className="text-tagline-3 text-accent font-normal" aria-label="Demo information" role="note">
-                  No signup required for demo — try it in your browser.
-                </i>
+
+              <RevealAnimation instant delay={0.4}>
+                <div className="relative mx-auto flex w-full max-w-295 justify-center">
+                  {/* Arrow SVG - right side pointing to dashboard */}
+                  <Image
+                    src="/home/hero/arrow.svg"
+                    alt=""
+                    width={112}
+                    height={112}
+                    className="absolute -top-12 right-2 z-10 hidden w-20 lg:-right-10 lg:-top-20 lg:block lg:w-28"
+                    aria-hidden="true"
+                  />
+                  <Image
+                    src="https://cdn.ordrat.com/ordrat-dashboard.webp"
+                    alt="لوحة تحكم أوردرات - نظام إدارة المتاجر والمطاعم الإلكترونية"
+                    width={1200}
+                    height={541}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 100vw, 1180px"
+                    quality={85}
+                    className="relative h-auto w-full object-cover lg:scale-[1.04]"
+                  />
+                </div>
               </RevealAnimation>
             </div>
           </div>
-
-          {/* voice animation svg  */}
-          <RevealAnimation instant delay={0.7}>
-            <div className="flex items-center justify-center" aria-label="Voice waveform visualization">
-              <HeroVoiceSVG />
-            </div>
-          </RevealAnimation>
         </div>
       </div>
     </section>

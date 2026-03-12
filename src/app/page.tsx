@@ -7,14 +7,18 @@ import Integration from '@/components/home/Integration';
 import Pricing from '@/components/home/Pricing';
 import Result from '@/components/home/Result';
 import Steps from '@/components/home/Steps';
-import VoiceSamples from '@/components/home/VoiceSamples';
+// import VoiceSamples from '@/components/home/VoiceSamples';
 import VoiceStyle from '@/components/home/VoiceStyle';
-import { defaultMetadata } from '@/utils/generateMetaData';
+import { generateMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  ...defaultMetadata,
-  title: 'AI Voice Generator - NextSaaS',
+  ...generateMetadata(
+    'Ordrat - Fast and easy ordering',
+    'Ordrat helps restaurants and cafes manage QR menus, online orders, and delivery in one simple dashboard.',
+    'https://ordrat.com',
+    '/images/shared/light-logo.svg',
+  ),
 };
 
 const page = () => {
@@ -23,7 +27,7 @@ const page = () => {
       <Hero />
       <Clients />
       <VoiceStyle />
-      <VoiceSamples />
+      {/* <VoiceSamples /> */}
       <Features />
       <FeaturesV2 />
       <Steps />

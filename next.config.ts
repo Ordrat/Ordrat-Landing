@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.ordrat.com',
+      },
+    ],
     qualities: [25, 50, 75, 100],
   },
 };

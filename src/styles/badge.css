@@ -88,5 +88,5 @@ Site Badges Styles
 }
 
 @utility badge-ivory {
-  @apply bg-ns-ivory text-secondary text-tagline-2 font-normal;
+  @apply bg-[#D63848]/10 text-[#D63848] text-tagline-2 font-normal;
 }

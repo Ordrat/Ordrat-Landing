@@ -15,7 +15,7 @@ const CheckIcon: FC<ArrowIconProps> = ({ className }) => (
 );
 
 interface CheckIconV3Props {
-  fill?: 'default' | 'accent';
+  fill?: 'default' | 'accent' | 'ordrat';
   className?: string;
 }
 
@@ -32,12 +32,24 @@ const CheckIconV3: FC<CheckIconV3Props> = ({ fill = 'default', className }) => (
       height="20"
       rx="10"
       fill=""
-      className={fill === 'accent' ? 'fill-secondary dark:fill-accent' : 'fill-secondary/40 dark:fill-accent/40'}
+      className={
+        fill === 'accent'
+          ? 'fill-secondary dark:fill-accent'
+          : fill === 'ordrat'
+            ? 'fill-white'
+            : 'fill-secondary/40 dark:fill-accent/40'
+      }
     />
     <path
       d="M9.31661 13.7561L14.7491 8.42144C15.0836 8.0959 15.0836 7.5697 14.7491 7.24416C14.4145 6.91861 13.8736 6.91861 13.539 7.24416L8.7116 11.9901L6.46096 9.78807C6.12636 9.46253 5.58554 9.46253 5.25095 9.78807C4.91635 10.1136 4.91635 10.6398 5.25095 10.9654L8.1066 13.7561C8.27347 13.9184 8.49253 14 8.7116 14C8.93067 14 9.14974 13.9184 9.31661 13.7561Z"
       fill=""
-      className={fill === 'accent' ? 'fill-white dark:fill-black' : 'dark:fill-accent fill-white'}
+      className={
+        fill === 'accent'
+          ? 'fill-white dark:fill-black'
+          : fill === 'ordrat'
+            ? 'fill-[#1A1A1C]'
+            : 'dark:fill-accent fill-white'
+      }
     />
   </svg>
 );

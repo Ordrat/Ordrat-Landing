@@ -14,14 +14,22 @@ import Image from 'next/image';
 const Result = () => {
   return (
     <section
-      className="bg-ns-ivory py-[80px] md:py-[120px] lg:py-[156px]"
+      className="bg-[#003049] py-[80px] md:py-[120px] lg:py-[156px]"
       aria-label="AI voice generator results and customer testimonials">
       <div className="main-container">
         <div className="space-y-12 md:space-y-19">
           <RevealAnimation delay={0.1}>
-            <h2 className="text-center font-normal lg:text-left">
-              Proven results, <span className="text-ns-linen">real voices</span>
-            </h2>
+            <div className="space-y-4 text-center lg:text-left">
+              <span className="badge badge-white bg-white text-[var(--color-ordrat-blue-main)]">
+                Real-world impact
+              </span>
+              <h2 className="text-primary-50 font-normal">
+                Proven results, <span className="text-[var(--color-ordrat-red-main)]">real voices</span>
+              </h2>
+              <p className="mx-auto max-w-[540px] text-tagline-1 font-normal text-primary-50/80 lg:mx-0">
+                See how brands use Ordrat to launch faster, scale content, and keep every customer interaction on‑brand.
+              </p>
+            </div>
           </RevealAnimation>
 
           {/* stories */}
@@ -64,8 +72,8 @@ const Result = () => {
               <div className="w-full max-w-[317px] space-y-5 lg:space-y-2">
                 {/* card two  */}
                 <RevealAnimation delay={0.3}>
-                  <div className="dark:bg-background-5 flex h-[370px] flex-col items-start justify-between rounded-4xl bg-white p-6 xl:max-w-[316px]">
-                    <span className="badge badge-ivory" aria-label="Content category: Case study">
+                <div className="dark:bg-background-5 flex h-[370px] flex-col items-start justify-between rounded-4xl bg-white p-6 xl:max-w-[316px]">
+                    <span className="badge badge-white text-primary-50 bg-[var(--color-ordrat-blue-main)] font-medium" aria-label="Content category: Case study">
                       Case study
                     </span>
                     <div className="space-y-8">
@@ -76,7 +84,7 @@ const Result = () => {
                       <div className="w-[90%] md:w-auto">
                         <LinkButton
                           href="/case-study/ai-powered-patient-care-solutions-in-healthcare"
-                          btnClass="btn-md-v2 btn-secondary-v2 group-hover/btn-v2:btn-primary-v2">
+                          btnClass="btn-md-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white">
                           Read now
                         </LinkButton>
                       </div>
@@ -86,14 +94,14 @@ const Result = () => {
 
                 {/* card three  */}
                 <RevealAnimation delay={0.4}>
-                  <div className="bg-ns-linen w-full max-w-[316px] space-y-3 rounded-4xl p-6">
+                  <div className="w-full max-w-[316px] space-y-3 rounded-4xl bg-[var(--color-ordrat-red-main)] p-6">
                     <h2
                       className="flex items-center justify-start pt-6 text-4xl font-light text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl xl:leading-[110%]"
                       aria-label="50 percent time reduction">
                       <NumberAnimation number={50} speed={2000} interval={100} rooms={2} heightSpaceRatio={2} />%
                     </h2>
 
-                    <p className="text-accent/60 font-normal">
+                    <p className="font-normal text-white/80">
                       less time spent on dubbing compared to traditional workflows.
                     </p>
                   </div>
@@ -187,7 +195,7 @@ const Result = () => {
                     <div className="w-[90%] md:w-auto">
                       <LinkButton
                         href="/case-study/cove-financial-risk-management-and-compliance"
-                        btnClass="btn-md-v2 btn-v2-white !border-0 group-hover/btn-v2:btn-primary-v2">
+                        btnClass="btn-md-v2 bg-white text-secondary !border-0 hover:bg-[var(--color-ordrat-red-main)] hover:text-white btn-arrow-black btn-arrow-black-hover-white">
                         Read now
                       </LinkButton>
                     </div>
@@ -196,13 +204,13 @@ const Result = () => {
 
                 {/* card seven  */}
                 <RevealAnimation delay={0.2}>
-                  <div className="dark:bg-background-5 flex h-[370px] w-full max-w-[317px] flex-col justify-between rounded-4xl bg-white p-6">
+                  <div className="dark:bg-background-5 flex h-[370px] w-full max-w-[317px] flex-col justify-between rounded-4xl bg-[var(--color-ordrat-red-main)] p-6">
                     <figure>
                       <Image src={scapicIcon} alt="Scapic company logo" />
                     </figure>
 
                     <div className="space-y-8">
-                      <p className="text-secondary dark:text-accent">
+                      <p className="text-white/90">
                         Our explainer videos now sound professional without hiring multiple voice actors. It's a total
                         game-changer.
                       </p>
@@ -218,8 +226,10 @@ const Result = () => {
                         />
 
                         <figure>
-                          <h3 className="text-tagline-1 leading-[150%] font-semibold sm:text-lg">Liam Brooks</h3>
-                          <p className="text-tagline-2 text-secondary/60 dark:text-accent/60 font-normal">
+                          <h3 className="text-tagline-1 leading-[150%] font-semibold text-white sm:text-lg">
+                            Liam Brooks
+                          </h3>
+                          <p className="text-tagline-2 font-normal text-white/80">
                             Video Producer, BrightMotion
                           </p>
                         </figure>

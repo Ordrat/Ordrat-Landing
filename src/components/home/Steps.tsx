@@ -2,12 +2,10 @@
 
 import RevealAnimation from '@/components/animation/RevealAnimation';
 import { cn } from '@/utils/cn';
-import stepImage554 from '@public/images/ns-img-554.png';
-import stepImage555 from '@public/images/ns-img-555.svg';
-import stepImage556 from '@public/images/ns-img-556.png';
-import stepImage557 from '@public/images/ns-img-557.png';
-import stepImage558 from '@public/images/ns-img-558.png';
-import stepImage559 from '@public/images/ns-img-559.svg';
+import stepImage554 from '@public/home/steps/signUp.png';
+import stepImage556 from '@public/home/steps/products.png';
+import stepImage557 from '@public/home/steps/customize-store.png';
+import stepImage558 from '@public/home/steps/sell.png';
 import { useLenis } from 'lenis/react';
 import { useEffect, useRef, useState } from 'react';
 import StepCard, { StepData } from './StepCard';
@@ -16,38 +14,34 @@ const stepsData: StepData[] = [
   {
     id: 'step-1',
     stepNumber: 1,
-    title: 'Write or paste script',
+    title: 'Sign Up Free',
     description:
-      "Quickly draft your message or drop in your ready-to-go text to get started instantly. Whether you're crafting a new idea, refining existing",
+      "Visit ordrat.com, enter your business name, phone, and email. No credit card required.",
     mainImage: stepImage554,
-    overlayImage: stepImage555,
-    overlayImagePosition: 'right',
   },
   {
     id: 'step-2',
     stepNumber: 2,
-    title: 'Choose your voice style',
+    title: 'Add Products',
     description:
-      'Select from natural human-like voices, accents, and tones that fit your content. Browse through our extensive library of professional voices, each designed to match',
+      'Upload photos, write descriptions, set prices. Our AI suggests best titles.',
     mainImage: stepImage556,
   },
   {
     id: 'step-3',
     stepNumber: 3,
-    title: 'Customize the delivery',
+    title: 'Customize Store',
     description:
-      'Adjust speed, pitch, pauses, and emotions for a perfect performance. Fine-tune every aspect of your voiceover to create the exact tone and pacing you need for your project.',
+      'Choose a design template, add your logo and colors. Our team helps via free video call.',
     mainImage: stepImage557,
   },
   {
     id: 'step-4',
     stepNumber: 4,
-    title: 'Generate & download',
+    title: 'Go Live & Sell',
     description:
-      "Get studio-quality audio in seconds and download instantly. Your professional voiceover is ready to use in any format, whether you're creating content for videos, podcasts, or presentations.",
+      "Share your store link on WhatsApp and Instagram. Start accepting orders instantly.",
     mainImage: stepImage558,
-    overlayImage: stepImage559,
-    overlayImagePosition: 'center',
   },
 ];
 
@@ -119,13 +113,13 @@ const Steps = () => {
           {/* heading  */}
           <RevealAnimation delay={0.1}>
             <h2 className="top-[156px] max-w-[629px] text-center font-normal lg:sticky lg:text-left">
-              Create stunning voiceover in <span className="text-ns-linen">4 simple steps</span>
+              Create stunning voiceover in <span className="text-[#D63848]">4 simple steps</span>
             </h2>
           </RevealAnimation>
 
           {/* bar  */}
           <RevealAnimation delay={0.1}>
-            <div className="bg-ns-ivory sticky top-[156px] hidden h-[564px] w-px lg:block" />
+            <div className="sticky top-[156px] hidden h-[564px] w-px bg-[var(--color-ordrat-blue-main)] lg:block" />
           </RevealAnimation>
 
           {/* cards  */}
@@ -152,7 +146,9 @@ const Steps = () => {
                   onClick={() => handleStepClick(step.stepNumber)}
                   className={cn(
                     'step-number text-heading-6 flex h-15 w-[44px] cursor-pointer items-center justify-center rounded-full px-4 py-[15px] font-normal transition-colors duration-300 ease-in-out',
-                    activeStep === step.stepNumber ? 'bg-ns-linen text-accent' : 'bg-ns-ivory text-secondary/40',
+                    activeStep === step.stepNumber
+                      ? 'bg-[var(--color-ordrat-red-main)] text-white'
+                      : 'bg-[var(--color-ordrat-blue-main)] text-white hover:bg-[var(--color-ordrat-red-main)]',
                   )}
                   data-step-number={step.stepNumber}
                   aria-label={`Go to step ${step.stepNumber}`}>

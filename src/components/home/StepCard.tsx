@@ -21,9 +21,9 @@ const StepCard = ({ step, cardRef }: StepCardProps) => {
     <div
       ref={cardRef}
       id={step.id}
-      className="step-card bg-ns-ivory relative mx-auto w-[320px] shrink-0 overflow-hidden rounded-4xl p-6 sm:w-[350px] md:h-[476px] md:w-[400px] xl:w-[442px]"
+      className="step-card relative mx-auto w-[320px] shrink-0 overflow-hidden rounded-4xl border-2 border-[var(--color-ordrat-red-main)] bg-[var(--color-ordrat-red-main)] p-6 sm:w-[350px] md:h-[476px] md:w-[400px] xl:w-[442px]"
       data-step={step.stepNumber}>
-      <figure className="bg-ns-linen relative z-10 rounded-[20px] p-2">
+      <figure className="relative z-10 rounded-[20px] border border-[var(--color-ordrat-red-main)] bg-[var(--color-ordrat-red-light)] p-2">
         <Image src={step.mainImage} alt={`step ${step.stepNumber}`} className="size-full object-cover" />
 
         {step.overlayImage && (
@@ -42,13 +42,16 @@ const StepCard = ({ step, cardRef }: StepCardProps) => {
       {/* gradient color  */}
       <div
         className="pointer-events-none absolute bottom-[77px] left-1/2 z-30 h-[262px] w-[641px] -translate-x-1/2 rotate-180 md:bottom-[52px] xl:bottom-[22px]"
-        style={{ background: 'linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #f4efe7 37.44%)' }}
+        style={{
+          background:
+            'linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, var(--color-ordrat-red-main) 37.44%)',
+        }}
       />
 
       {/* text  */}
       <div className="relative z-33 mt-16 space-y-3 md:mt-14 lg:mt-6">
-        <h2 className="text-heading-5 lg:text-heading-4 font-normal">{step.title}</h2>
-        <p className="text-tagline-2">{step.description}</p>
+        <h2 className="text-heading-5 lg:text-heading-4 font-normal text-white">{step.title}</h2>
+        <p className="text-tagline-2 text-white">{step.description}</p>
       </div>
     </div>
   );

@@ -40,6 +40,11 @@ All the varaiables are added here
   --color-stroke-9: var(--color-background-8);
   --color-stroke-10: #dfd1c5;
 
+  /* Ordrat brand */
+  --color-ordrat-red-main: #d63848;
+  --color-ordrat-red-light: #FAD5D8;
+  --color-ordrat-blue-main: #003049;
+
   --color-ns-yellow: #f9eb57;
   --color-ns-green: #c6f56f;
   --color-ns-red: #ffb9a2;

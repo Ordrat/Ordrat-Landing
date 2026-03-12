@@ -1,10 +1,10 @@
 import RevealAnimation from '@/components/animation/RevealAnimation';
-import teamImage546 from '@public/images/ns-img-546.png';
-import teamImage547 from '@public/images/ns-img-547.png';
-import teamImage548 from '@public/images/ns-img-548.png';
-import teamImage549 from '@public/images/ns-img-549.png';
-import teamImage550 from '@public/images/ns-img-550.png';
-import teamImage551 from '@public/images/ns-img-551.png';
+import Branches from '@public/home/FeaturesV2-Mobile/Branches.webp';
+import Dashboard from '@public/home/FeaturesV2-Mobile/dashboard.webp';
+import Deal from '@public/home/FeaturesV2-Mobile/Deal.webp';
+import Example from '@public/home/FeaturesV2-Mobile/Example.webp';
+import OrderDetails from '@public/home/FeaturesV2-Mobile/order_details.webp';
+import PickDelivery from '@public/home/FeaturesV2-Mobile/Pick-delivery.webp';
 import { StaticImageData } from 'next/image';
 import Marquee from 'react-fast-marquee';
 import FeatureImgCard from './FeatureImgCard';
@@ -18,35 +18,35 @@ interface TeamItem {
 
 const teamItems: TeamItem[] = [
   {
-    id: 'e-learning',
-    title: 'E-learning',
-    imageSrc: teamImage551,
+    id: 'branches',
+    title: 'Branches',
+    imageSrc: Branches,
     className: 'ml-6',
   },
   {
-    id: 'podcasts',
-    title: 'Podcasts',
-    imageSrc: teamImage546,
+    id: 'dashboard',
+    title: 'Dashboard',
+    imageSrc: Dashboard,
   },
   {
-    id: 'ads-marketing',
-    title: 'Ads & marketing',
-    imageSrc: teamImage547,
+    id: 'delivery-management',
+    title: 'Delivery Management',
+    imageSrc: Deal,
   },
   {
-    id: 'enterprise-training',
-    title: 'Enterprise training',
-    imageSrc: teamImage548,
+    id: 'share-profile',
+    title: 'Shop Profiles',
+    imageSrc: Example,
   },
   {
-    id: 'storytelling',
-    title: 'Storytelling',
-    imageSrc: teamImage549,
+    id: 'order-details',
+    title: 'Order Details',
+    imageSrc: OrderDetails,
   },
   {
-    id: 'gaming-animation',
-    title: 'Gaming & animation',
-    imageSrc: teamImage550,
+    id: 'delivery-picking',
+    title: 'Delivery Picking',
+    imageSrc: PickDelivery,
   },
 ];
 
@@ -61,15 +61,14 @@ const FeaturesV2 = () => {
         {/* content  */}
         <div className="space-y-3 text-center lg:text-left">
           <RevealAnimation delay={0.1}>
-            <h2 id="team-heading" className="mx-auto max-w-[500px] font-normal lg:mx-0" itemProp="name">
-              Tailored for every <span className="text-ns-linen">creator </span>and
-              <span className="text-ns-linen">team</span>
-            </h2>
+            <h1 id="team-heading" className="mx-auto max-w-[500px] font-normal lg:mx-0" itemProp="name">
+              Advantages of <span className="text-[#D63848] whitespace-nowrap">Ordrat </span>application
+            </h1>
           </RevealAnimation>
           <RevealAnimation delay={0.2}>
             <p className="text-tagline-1 mx-auto max-w-[538px] font-normal lg:mx-0" itemProp="description">
-              Whether you're building a course, podcast, ad, or enterprise solution NextSaaS adapts to your needs.
-            </p>
+              A comprehensive app for managing your store, tracking all orders, analyzing store performance and profits, and marketing to customers. 
+              </p>
           </RevealAnimation>
         </div>
       </div>

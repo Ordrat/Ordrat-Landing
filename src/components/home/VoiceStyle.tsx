@@ -35,12 +35,12 @@ const VoiceStyle = () => {
             {/* content  */}
             <div className="ml-0 w-full space-y-3 text-center xl:max-w-[398px] xl:text-left">
               <RevealAnimation delay={0.1}>
-                <h2 className="font-normal" id="voice-styles-section-heading">
-                  Choose from the <span className="text-ns-linen">voice</span> styles
-                </h2>
+                <h1 className="font-normal" id="voice-styles-section-heading">
+                  Discover the features of  <span className="text-[#D63848]">Ordrat</span>
+                </h1>
               </RevealAnimation>
               <RevealAnimation delay={0.2}>
-                <p>Select from a diverse range of AI voice styles — from warm narrators to energetic presenters.</p>
+                <p>Boost your online sales with modern tools: digital QR Code menus, reservation and delivery systems through our platform, and much more!</p>
               </RevealAnimation>
             </div>
 
@@ -58,7 +58,7 @@ const VoiceStyle = () => {
             {/* middle area  */}
             <RevealAnimation delay={0.4}>
               <div
-                className="w-full max-w-[695px] space-y-[89px] rounded-4xl border border-[#F4EFE7] p-6 xl:max-w-[560px]"
+                className="w-full max-w-[695px] space-y-[89px] rounded-4xl border border-[var(--color-ordrat-red-light)] p-6 xl:max-w-[560px]"
                 aria-labelledby="languages-heading">
                 <div className="space-y-2">
                   <p className="text-secondary text-tagline-1 font-normal">Voices from around the world</p>
@@ -69,9 +69,9 @@ const VoiceStyle = () => {
 
                 {/* marquee  */}
                 <div
-                  className="relative w-full space-y-[14px] overflow-hidden rounded-2xl bg-[#F4EFE7] p-4 xl:max-w-[512px]"
+                  className="relative w-full space-y-[14px] overflow-hidden rounded-2xl bg-[var(--color-ordrat-red-main)] p-4 xl:max-w-[512px]"
                   aria-labelledby="language-marquee-heading">
-                  <h4 id="language-marquee-heading" className="text-heading-6 relative z-20 font-normal">
+                  <h4 id="language-marquee-heading" className="text-heading-6 relative z-20 font-normal text-white">
                     Language
                   </h4>
 
@@ -104,13 +104,13 @@ const VoiceStyle = () => {
 
                   <div
                     className="absolute top-0 left-0 z-10 h-36 w-[126px] rotate-180"
-                    style={{ background: 'linear-gradient(270deg, #f4efe7 16.67%, rgba(244, 239, 231, 0) 100%)' }}
+                    style={{ background: 'linear-gradient(270deg, var(--color-ordrat-red-main) 16.67%, rgba(244, 239, 231, 0) 100%)' }}
                   />
                   {/* right bg  */}
 
                   <div
                     className="absolute top-0 right-0 z-10 h-36 w-[126px]"
-                    style={{ background: 'linear-gradient(270deg, #f4efe7 16.67%, rgba(244, 239, 231, 0) 100%)' }}
+                    style={{ background: 'linear-gradient(270deg, var(--color-ordrat-red-main) 16.67%, rgba(244, 239, 231, 0) 100%)' }}
                   />
                 </div>
               </div>

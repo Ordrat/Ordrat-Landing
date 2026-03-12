@@ -11,12 +11,12 @@ import IntegrationCircle from './IntegrationCircle';
 
 const Features = () => {
   return (
-    <section className="bg-ns-ivory py-[80px] md:py-[120px] lg:py-[176px]">
+    <section className="bg-[var(--color-ordrat-blue-main)] py-[80px] md:py-[120px] lg:py-[176px]">
       <div className="main-container">
         <div className="space-y-[76px]">
           <div className="flex flex-col items-center justify-between gap-y-5 lg:flex-row">
             {/* content  */}
-            <div className="space-y-5 text-center lg:text-left">
+            <div className="space-y-5 text-center text-white lg:text-left">
               <RevealAnimation delay={0.1}>
                 <span className="badge badge-white text-secondary bg-white font-medium">Features</span>
               </RevealAnimation>
@@ -25,12 +25,13 @@ const Features = () => {
                 <RevealAnimation delay={0.2}>
                   <h2
                     id="services-heading"
-                    className="mx-auto max-w-[450px] text-center lg:mx-0 lg:max-w-[505px] lg:text-left">
-                    Powerful <span className="text-ns-linen">AI voice </span> tools built for everyone
+                    className="mx-auto max-w-[450px] text-center text-white lg:mx-0 lg:max-w-[505px] lg:text-left">
+                    Powerful <span className="text-[var(--color-ordrat-red-main)]">AI voice </span> tools built for
+                    everyone
                   </h2>
                 </RevealAnimation>
                 <RevealAnimation delay={0.3}>
-                  <p className="mx-auto max-w-[400px] text-center lg:mx-0 lg:text-left">
+                  <p className="mx-auto max-w-[400px] text-center text-white/80 lg:mx-0 lg:text-left">
                     From creators to enterprises, NextSaaS helps you produce high-quality voiceover without the studio.
                   </p>
                 </RevealAnimation>
@@ -40,7 +41,9 @@ const Features = () => {
             <RevealAnimation delay={0.4}>
               <div className="mt-auto mb-0 flex w-full items-center justify-center md:w-auto">
                 <div className="mx-auto w-[90%] text-center md:w-auto lg:text-right">
-                  <LinkButton href="/features" btnClass="btn-xl-v2 btn-secondary-v2 group-hover/btn-v2:btn-primary-v2">
+                  <LinkButton
+                    href="/features"
+                    btnClass="btn-xl-v2 bg-[var(--color-ordrat-red-main)] text-white hover:text-secondary border-0 hover:bg-[var(--color-primary-50)] btn-arrow-white hover:btn-arrow-black">
                     Explore features
                   </LinkButton>
                 </div>
@@ -122,7 +125,7 @@ const Features = () => {
                       <div className="flex items-center justify-end text-right">
                         <LinkButton
                           href="/pricing"
-                          btnClass="btn-sm-v2 btn-secondary-v2 group-hover/btn-v2:btn-primary-v2">
+                          btnClass="btn-sm-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white">
                           Get started
                         </LinkButton>
                       </div>

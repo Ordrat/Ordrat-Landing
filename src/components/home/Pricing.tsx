@@ -81,12 +81,12 @@ const Pricing = () => {
             {/* heading  */}
             <div className="space-y-5 text-center">
               <RevealAnimation delay={0.1}>
-                <span className="badge badge-ivory">Pricing plan</span>
+                <span className="badge bg-[var(--color-ordrat-blue-main)] text-white font-medium">Pricing plan</span>
               </RevealAnimation>
               <div className="space-y-3 text-center">
                 <RevealAnimation delay={0.2}>
                   <h2 className="font-normal">
-                    Flexible <span className="text-ns-linen">pricing</span> for every stage
+                    Flexible <span className="text-[#D63848]">pricing</span> for every stage
                   </h2>
                 </RevealAnimation>
                 <RevealAnimation delay={0.3}>
@@ -101,12 +101,14 @@ const Pricing = () => {
             <RevealAnimation delay={0.4}>
               <div className="relative z-0 mx-auto w-full max-w-[293px]">
                 <RevealAnimation delay={1} duration={1} direction="up" offset={200}>
-                  <span className="bg-secondary text-tagline-2 absolute -top-2.5 -right-6 z-11 inline-block w-[90px] rotate-20 rounded-[36px] px-3.5 py-1.5 font-medium text-white capitalize shadow-xs">
+                  <span className="bg-[var(--color-ordrat-red-main)] text-tagline-2 absolute -top-2.5 -right-6 z-11 inline-block w-[90px] rotate-20 rounded-[36px] px-3.5 py-1.5 font-medium text-white capitalize shadow-xs">
                     save 40%
                   </span>
                 </RevealAnimation>
-                <label className="shadow-1 bg-ns-ivory relative z-10 inline-flex cursor-pointer items-center rounded-full px-[57px] py-6">
-                  <span className="pr-2.5 text-base font-normal text-black">Monthly</span>
+                <label className="shadow-1 relative z-10 inline-flex cursor-pointer items-center rounded-full bg-[var(--color-ordrat-blue-main)] px-10 py-4">
+                  <span className="mr-4 inline-flex items-center rounded-full bg-[var(--color-ordrat-blue-main)] px-3 py-1 text-sm font-normal text-white">
+                    Monthly
+                  </span>
                   <input
                     type="checkbox"
                     id="priceCheck"
@@ -115,8 +117,10 @@ const Pricing = () => {
                     checked={isYearly}
                     onChange={(e) => setIsYearly(e.target.checked)}
                   />
-                  <span className="border-stroke-1/30 after:bg-accent before:bg-secondary relative h-[28px] w-13 rounded-[34px] border bg-transparent before:absolute before:-top-[5px] before:-left-[6px] before:-z-10 before:h-[36px] before:w-[62px] before:rounded-[34px] before:p-[5px] before:transition-all before:content-[''] after:absolute after:start-[2px] after:top-1/2 after:size-6 after:-translate-y-1/2 after:rounded-full after:transition-all after:content-[''] peer-checked:after:start-[2px] peer-checked:after:translate-x-[94%]"></span>
-                  <span className="ps-2.5 text-base font-normal text-black">Yearly</span>
+                  <span className="border-stroke-1/30 after:bg-white before:bg-secondary relative h-[28px] w-13 rounded-[34px] border bg-transparent before:absolute before:-top-[5px] before:-left-[6px] before:-z-10 before:h-[36px] before:w-[62px] before:rounded-[34px] before:p-[5px] before:transition-all before:content-[''] after:absolute after:start-[2px] after:top-1/2 after:size-6 after:-translate-y-1/2 after:rounded-full after:transition-all after:content-[''] peer-checked:after:start-[2px] peer-checked:after:translate-x-[94%]"></span>
+                  <span className="ml-4 inline-flex items-center rounded-full bg-[var(--color-ordrat-blue-main)] px-3 py-1 text-sm font-normal text-white">
+                    Yearly
+                  </span>
                 </label>
               </div>
             </RevealAnimation>

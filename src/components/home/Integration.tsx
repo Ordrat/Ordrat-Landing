@@ -11,12 +11,12 @@ const Integration = () => {
             <div className="mt-[180px] space-y-[76px] md:mt-[200px] lg:mt-[280px]">
               <div className="space-y-4 text-center">
                 <RevealAnimation delay={0.2}>
-                  <span className="badge badge-ivory">Integration</span>
+                  <span className="badge badge-white text-primary-50 bg-[var(--color-ordrat-blue-main)] font-medium">Integration</span>
                 </RevealAnimation>
                 <div className="space-y-3">
                   <RevealAnimation delay={0.3}>
                     <h2>
-                      Seamless tool <span className="text-ns-linen">integration</span>
+                      Seamless tool <span className="text-[#D63848]">integration</span>
                     </h2>
                   </RevealAnimation>
                   <RevealAnimation delay={0.4}>
@@ -31,7 +31,7 @@ const Integration = () => {
                 <div className="text-center">
                   <LinkButton
                     href="/integration"
-                    btnClass="btn-lg-v2 lg:btn-xl-v2 btn-secondary-v2 group-hover/btn-v2:btn-primary-v2">
+                    btnClass="btn-lg-v2 lg:btn-xl-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white">
                     Explore integration
                   </LinkButton>
                 </div>

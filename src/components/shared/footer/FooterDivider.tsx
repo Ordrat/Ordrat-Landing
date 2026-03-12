@@ -11,7 +11,7 @@ const FooterDivider = ({ className }: FooterDividerProps) => {
   return (
     <div
       ref={dividerRef}
-      className={cn('bg-stroke-10 absolute top-0 right-0 left-0 mx-auto h-px w-0 origin-center', className)}></div>
+      className={cn('absolute top-0 right-0 left-0 mx-auto h-px w-0 origin-center bg-white', className)}></div>
   );
 };
 

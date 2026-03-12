@@ -11,18 +11,18 @@ import FooterSocial from './FooterSocial';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-inherit px-4 pb-4">
-      <div className="bg-ns-ivory rounded-2xl">
+    <footer className="w-full bg-[#003049] px-4 pb-4 text-white">
+      <div className="rounded-2xl">
         <div className="main-container px-5">
           <div className="grid grid-cols-12 justify-between gap-x-0 gap-y-16 pt-16 pb-12 xl:pt-[90px]">
             <div className="col-span-12 xl:col-span-4">
               <RevealAnimation delay={0.3}>
                 <div className="max-w-[306px]">
                   <figure>
-                    <Image src={lightLogo} alt="NextSass Logo" />
+                    <Image src={lightLogo} alt="Ordrat Logo" />
                   </figure>
-                  <p className="text-secondary/60 text-tagline-1 mt-4 mb-7 font-normal">
-                    Create realistic AI voices instantly for your content with NextSaaS.
+                  <p className="text-tagline-1 mt-4 mb-7 font-normal text-white/70">
+                    Create realistic AI voices instantly for your content with Ordrat.
                   </p>
 
                   {/* social icons  */}
@@ -35,11 +35,13 @@ const Footer = () => {
                 <div key={item.title} className="col-span-12 md:col-span-4">
                   <RevealAnimation delay={0.4 + 0.1 * index}>
                     <div className="space-y-8">
-                      <p className="sm:text-heading-6 text-tagline-1 text-secondary font-normal">{item.title}</p>
+                      <p className="sm:text-heading-6 text-tagline-1 font-normal text-white">{item.title}</p>
                       <ul className="space-y-3 sm:space-y-5">
                         {item.links.map((link) => (
                           <li key={link.label}>
-                            <Link href={link.href} className="footer-link text-secondary before:bg-secondary">
+                            <Link
+                              href={link.href}
+                              className="footer-link text-white/80 before:bg-white hover:text-white">
                               {link.label}
                             </Link>
                           </li>
@@ -54,8 +56,8 @@ const Footer = () => {
           <div className="relative pt-[26px] pb-[100px] text-center">
             <FooterDivider />
             <RevealAnimation delay={0.7} offset={10} start="top 105%">
-              <p className="text-tagline-1 text-secondary font-normal">
-                Copyright &copy;NextSaaS – smart application for modern business
+              <p className="text-tagline-1 font-normal text-white/60">
+                Copyright &copy; Ordrat – smart application for modern business
               </p>
             </RevealAnimation>
           </div>

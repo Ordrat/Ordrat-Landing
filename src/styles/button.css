@@ -235,3 +235,32 @@ NextSaaS Buttons Styles
     @apply fill-white/60;
   }
 }
+
+/* CTA arrow helpers */
+@utility btn-arrow-white {
+  .btn-v2-icon {
+    @apply fill-white;
+  }
+}
+
+@utility btn-arrow-white-hover-black {
+  &:hover {
+    .btn-v2-icon {
+      @apply fill-black;
+    }
+  }
+}
+
+@utility btn-arrow-black {
+  .btn-v2-icon {
+    @apply fill-secondary;
+  }
+}
+
+@utility btn-arrow-black-hover-white {
+  &:hover {
+    .btn-v2-icon {
+      @apply fill-white;
+    }
+  }
+}

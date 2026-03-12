@@ -117,14 +117,14 @@ const VoiceSamples = () => {
           {/* content  */}
           <div className="space-y-5 text-center lg:text-left">
             <RevealAnimation delay={0.1}>
-              <span className="badge badge-ivory" aria-label="Voice Samples section badge">
+              <span className="badge badge-white text-primary-50 bg-[var(--color-ordrat-blue-main)] font-medium" aria-label="Voice Samples section badge">
                 Voice Samples
               </span>
             </RevealAnimation>
             <div className="space-y-3">
               <RevealAnimation delay={0.2}>
                 <h2 id="voice-samples-heading" className="font-normal">
-                  Hear the <span className="text-ns-linen">difference</span>
+                  Hear the <span className="text-[#D63848]">difference</span>
                 </h2>
               </RevealAnimation>
               <RevealAnimation delay={0.3}>

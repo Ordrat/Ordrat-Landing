@@ -33,26 +33,56 @@ const PricingCard = ({
   return (
     <div
       className={cn(
-        'bg-ns-ivory flex h-[598px] flex-col gap-6 rounded-4xl px-6 py-8 max-lg:w-full',
+        'flex h-[598px] flex-col gap-6 rounded-4xl bg-[var(--color-ordrat-red-main)] px-6 py-8 max-lg:w-full',
         highlight && 'p-1.5',
       )}>
-      <div className={cn('flex h-full flex-col gap-6', highlight && 'rounded-[28px] bg-white p-6 dark:bg-black')}>
+      <div
+        className={cn(
+          'flex h-full flex-col gap-6 text-white',
+          highlight && 'rounded-[28px] bg-white p-6 text-secondary dark:bg-black dark:text-white',
+        )}>
         <div className="mb-6">
-          <h3 className="text-heading-5 mb-2 font-normal">{title}</h3>
-          <p className="mb-6 max-w-[270px]">{description}</p>
+          <h3
+            className={cn(
+              'text-heading-5 mb-2 font-normal',
+              highlight ? 'text-secondary' : 'text-white',
+            )}>
+            {title}
+          </h3>
+          <p
+            className={cn(
+              'mb-6 max-w-[270px]',
+              highlight ? 'text-secondary/70' : 'text-white/80',
+            )}>
+            {description}
+          </p>
           <ul className="relative list-none space-y-4">
             {features.map((feature) => (
               <li key={feature} className="flex items-center gap-2.5">
-                <CheckIconV3 fill={highlight ? 'accent' : 'default'} />
-                <span className="text-secondary text-tagline-2 font-normal">{feature}</span>
+                <CheckIconV3 fill={highlight ? 'accent' : 'ordrat'} />
+                <span
+                  className={cn(
+                    'text-tagline-2 font-normal',
+                    highlight ? 'text-secondary' : 'text-white',
+                  )}>
+                  {feature}
+                </span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="border-stroke-10 mt-auto border-t pt-6">
+        <div
+          className={cn(
+            'mt-auto border-t pt-6',
+            highlight ? 'border-black' : 'border-white/40',
+          )}>
           <div className={cn('mb-6', isYearly ? 'price-year' : 'price-month')}>
-            <h4 className="text-heading-4 font-normal">
+            <h4
+              className={cn(
+                'text-heading-4 font-normal',
+                highlight ? 'text-secondary' : 'text-white',
+              )}>
               ${price}
               <span className="text-tagline-2">{pricePeriod}</span>
             </h4>
@@ -66,12 +96,11 @@ const PricingCard = ({
           <div className="w-full">
             <LinkButton
               href={buttonHref}
-              className="w-full!"
               btnClass={cn(
-                'btn-md  !w-full',
+                'btn-md w-full',
                 highlight
-                  ? 'btn-secondary-v2 group-hover/btn-v2:btn-primary-v2'
-                  : 'btn-gray-v2 group-hover/btn-v2:btn-secondary-v2',
+                  ? 'bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white'
+                  : 'bg-[var(--color-ordrat-blue-main)] text-white border-0 hover:bg-white hover:text-[var(--color-ordrat-blue-main)] btn-arrow-white hover:btn-arrow-black',
               )}>
               {buttonText}
             </LinkButton>

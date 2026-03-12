@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${interTight.variable} antialiased`}>
+      <body className={`${interTight.variable} antialiased`} suppressHydrationWarning>
         <AppContextProvider>
           <Suspense>
             <SmoothScrollProvider>

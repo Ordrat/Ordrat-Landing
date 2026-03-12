@@ -24,13 +24,13 @@ const CompanyMenuItemLink = ({
         href={href}
         onClick={() => setMenuDropdownId(null)}
         className="relative flex items-start gap-3 rounded-2xl p-3 transition-all duration-300">
-        <HoverBgTransform className="group-hover/item:bg-ns-ivory group-hover/item:opacity-100" />
+        <HoverBgTransform className="group-hover/item:bg-[var(--color-ordrat-red-main)] group-hover/item:opacity-100" />
         <div className="shadow-14 border-stroke-10 relative z-10 flex size-11 items-center justify-center rounded-[10px] border bg-white p-3">
           {icon}
         </div>
         <div className="relative z-10">
-          <p className="text-tagline-1 text-secondary font-normal">{title}</p>
-          <p className="text-tagline-2 text-secondary/60 font-normal">{description}</p>
+          <p className="text-tagline-1 text-secondary font-normal group-hover/item:text-white">{title}</p>
+          <p className="text-tagline-2 text-secondary/60 font-normal group-hover/item:text-white/80">{description}</p>
         </div>
       </Link>
     </li>
