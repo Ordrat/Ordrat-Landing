@@ -24,7 +24,7 @@ const Hero = () => {
                       <span className="relative inline-flex flex-wrap items-start justify-center gap-x-1 gap-y-1 sm:flex-nowrap sm:gap-x-0.5">
                         {/* Head decoration SVG */}
                         <Image
-                          src="/home/hero/head.svg"
+                          src="/home/Hero/head.svg"
                           alt=""
                           width={45}
                           height={39}
@@ -39,7 +39,7 @@ const Hero = () => {
                           Ordrat
                           {/* Underline SVG */}
                           <Image
-                            src="/home/hero/line.svg"
+                            src="/home/Hero/line.svg"
                             alt=""
                             width={335}
                             height={34}
@@ -63,7 +63,7 @@ const Hero = () => {
                 <div className="relative mx-auto flex w-full max-w-295 justify-center">
                   {/* Arrow SVG - right side pointing to dashboard */}
                   <Image
-                    src="/home/hero/arrow.svg"
+                    src="/home/Hero/arrow.svg"
                     alt=""
                     width={112}
                     height={112}
