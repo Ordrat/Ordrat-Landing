@@ -23,6 +23,22 @@ NextSaaS Buttons Styles
   }
 }
 
+html[dir='rtl'] .btn {
+  &::before {
+    @apply right-auto left-0;
+  }
+
+  &:hover {
+    &::before {
+      @apply translate-x-4;
+    }
+
+    span {
+      @apply translate-x-2;
+    }
+  }
+}
+
 /* btn color variants */
 @utility btn-primary {
   @apply bg-primary-500 shadow-1 border-primary-600 dark:border-primary-400 text-white;

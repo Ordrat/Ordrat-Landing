@@ -7,7 +7,7 @@ import Integration from '@/components/home/Integration';
 import Pricing from '@/components/home/Pricing';
 import Result from '@/components/home/Result';
 import Steps from '@/components/home/Steps';
-import VoiceStyle from '@/components/home/VoiceStyle';
+// import VoiceStyle from '@/components/home/VoiceStyle';
 import { generateMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
@@ -25,7 +25,7 @@ const page = () => {
     <main className="bg-white">
       <Hero />
       <Clients />
-      <VoiceStyle />
+      {/* <VoiceStyle /> */}
       <Features />
       <FeaturesV2 />
       <Steps />

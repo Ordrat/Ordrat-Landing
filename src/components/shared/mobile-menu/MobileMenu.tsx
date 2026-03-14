@@ -6,6 +6,7 @@ import { cn } from '@/utils/cn';
 import mainLogo from '@public/images/shared/dark-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import MenuCloseButton from './MenuCloseButton';
 import MobileMenuItem from './MobileMenuItem';
@@ -31,6 +32,24 @@ const MobileMenu = ({ menuData }: { menuData: MobileMenuGroup[] }) => {
   const { isOpen } = useMobileMenuContext();
   const { locale, setLocale, isRTL } = useLocale();
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const getLocalizedPath = (nextLocale: Locale) => {
+    const segments = pathname.split('/').filter(Boolean);
+
+    if (segments[0] === 'en' || segments[0] === 'ar') {
+      segments[0] = nextLocale;
+    } else {
+      segments.unshift(nextLocale);
+    }
+
+    const localizedPath = `/${segments.join('/')}`;
+    const query = searchParams.toString();
+
+    return query ? `${localizedPath}?${query}` : localizedPath;
+  };
 
   return (
     <aside
@@ -57,7 +76,7 @@ const MobileMenu = ({ menuData }: { menuData: MobileMenuGroup[] }) => {
                 className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-[#F5F5F5] px-3 py-1.5 text-sm font-medium text-secondary transition-all hover:border-ordrat-red-main hover:bg-white">
                 <span
                   style={
-                    locale === 'en'
+                    locale === 'ar'
                       ? { fontFamily: 'var(--font-tajawal), sans-serif' }
                       : undefined
                   }>
@@ -86,6 +105,7 @@ const MobileMenu = ({ menuData }: { menuData: MobileMenuGroup[] }) => {
                       type="button"
                       onClick={() => {
                         setLocale(lng);
+                        router.push(getLocalizedPath(lng));
                         setIsLangOpen(false);
                       }}
                       className={cn(

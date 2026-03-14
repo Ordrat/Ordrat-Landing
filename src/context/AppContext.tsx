@@ -16,7 +16,7 @@ interface AppContextType extends AppState {
 }
 
 // Default state
-const defaultState: AppState = {
+export const defaultAppState: AppState = {
   showTopNav: true,
   showTopNavDescription: true,
   showTopNavMarquee: true,
@@ -26,8 +26,14 @@ const defaultState: AppState = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 // Provider component
-export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-  const [state, setState] = useState<AppState>(defaultState);
+export const AppContextProvider = ({
+  children,
+  initialState,
+}: {
+  children: ReactNode;
+  initialState?: AppState;
+}) => {
+  const [state, setState] = useState<AppState>(initialState ?? defaultAppState);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load from localStorage on mount
@@ -35,7 +41,16 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     try {
       const stored = localStorage.getItem('app-state');
       if (stored) {
-        setState(JSON.parse(stored));
+        const parsed = JSON.parse(stored) as Partial<AppState>;
+        setState({
+          showTopNav: typeof parsed.showTopNav === 'boolean' ? parsed.showTopNav : defaultAppState.showTopNav,
+          showTopNavDescription:
+            typeof parsed.showTopNavDescription === 'boolean'
+              ? parsed.showTopNavDescription
+              : defaultAppState.showTopNavDescription,
+          // Marquee close is session-only and should reset on refresh.
+          showTopNavMarquee: true,
+        });
       }
     } catch {
       // Silently handle localStorage errors
@@ -48,7 +63,14 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (isLoaded) {
       try {
-        localStorage.setItem('app-state', JSON.stringify(state));
+        const persistableState: AppState = {
+          ...state,
+          // Keep marquee visible after refresh.
+          showTopNavMarquee: true,
+        };
+
+        localStorage.setItem('app-state', JSON.stringify(persistableState));
+        document.cookie = `app-state=${encodeURIComponent(JSON.stringify(persistableState))};path=/;max-age=31536000;SameSite=Lax`;
       } catch {
         // Silently handle localStorage errors
       }

@@ -26,8 +26,8 @@ const LinkButton = ({ className, href, btnClass, children }: ButtonProps) => {
         </span>
         <div className="relative size-6 overflow-hidden">
           {/* one  */}
-          <span className="btn-v2-icon absolute inset-0 size-6 -translate-x-6 transition-all duration-300 ease-in-out group-hover/btn-v2:translate-x-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <span className="btn-v2-icon absolute inset-0 size-6 -translate-x-6 transition-all duration-300 ease-in-out group-hover/btn-v2:translate-x-1 rtl:translate-x-6 rtl:group-hover/btn-v2:-translate-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="rtl:-scale-x-100">
               <path d="M11 5H13V7H11V5Z" />
               <path d="M5 5H7V7H5V5Z" />
               <path d="M14 8H16V10H14V8Z" />
@@ -41,8 +41,8 @@ const LinkButton = ({ className, href, btnClass, children }: ButtonProps) => {
             </svg>
           </span>
           {/* two  */}
-          <span className="btn-v2-icon absolute size-6 -translate-x-2 transition-all duration-300 ease-in-out group-hover/btn-v2:translate-x-6">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <span className="btn-v2-icon absolute size-6 -translate-x-2 transition-all duration-300 ease-in-out group-hover/btn-v2:translate-x-6 rtl:translate-x-2 rtl:group-hover/btn-v2:-translate-x-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="rtl:-scale-x-100">
               <path d="M11 5H13V7H11V5Z" />
               <path d="M5 5H7V7H5V5Z" />
               <path d="M14 8H16V10H14V8Z" />

@@ -2,7 +2,7 @@
 import { BlogIcon, FaqIcon, GlossaryIcon, SuccessStoriesIcon, SupportIcon, TutorialIcon } from '@/icons/menu-icon';
 import { cn } from '@/utils/cn';
 import { ReactNode } from 'react';
-import CompanyMenuItemLink from './CompanyMenuItemLink';
+import CompanyMenuItemLink from './FeaturesMenuItemLink';
 
 type ResourcesMenuItem = {
   href: string;

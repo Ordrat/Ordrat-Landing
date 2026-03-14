@@ -9,11 +9,12 @@ import { cn } from '@/utils/cn';
 import mainLogo from '@public/images/shared/dark-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState, type ComponentType } from 'react';
 import type { Locale } from '@/app/i18n/messages';
 import MobileMenu from '../mobile-menu/MobileMenu';
 import MobileMenuButton from '../mobile-menu/MobileMenuButton';
-import CompanyMenu from './CompanyMenu';
+import CompanyMenu from './FeaturesMenu';
 import PlanAndSupportMenu from './PlanAndSupportMenu';
 import ResourcesMenu from './ResourcesMenu';
 import { mobileMenuData } from './data';
@@ -51,11 +52,29 @@ const Navbar = ({ showTopNav }: { showTopNav: boolean }) => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const languageMenuRef = useRef<HTMLDivElement>(null);
   const { locale, setLocale, t } = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const { isScrolled } = useNavbarScroll(150);
 
   const handleMenuHover = (dropdownId?: string | null) => {
     setMenuDropdownId(dropdownId || null);
+  };
+
+  const getLocalizedPath = (nextLocale: Locale) => {
+    const segments = pathname.split('/').filter(Boolean);
+
+    if (segments[0] === 'en' || segments[0] === 'ar') {
+      segments[0] = nextLocale;
+    } else {
+      segments.unshift(nextLocale);
+    }
+
+    const localizedPath = `/${segments.join('/')}`;
+    const query = searchParams.toString();
+
+    return query ? `${localizedPath}?${query}` : localizedPath;
   };
 
   useEffect(() => {
@@ -90,7 +109,7 @@ const Navbar = ({ showTopNav }: { showTopNav: boolean }) => {
         onMouseLeave={() => handleMenuHover(null)}
         className={cn(
           'lp:max-w-322.5! fixed top-5 left-1/2 z-50 mx-auto w-full max-w-87.5 -translate-x-1/2 rounded-full transition-all duration-500 min-[425px]:max-w-93.75 min-[500px]:max-w-112.5 sm:max-w-135 md:max-w-180 lg:max-w-240 xl:max-w-285',
-          showTopNav ? 'top-13 md:top-12 lg:top-15' : 'top-5',
+          showTopNav ? 'top-13 md:top-13 lg:top-16' : 'top-5',
           isScrolled && 'top-3!',
         )}>
         <RevealAnimation direction="up" offset={100} delay={0.1} instant>
@@ -196,6 +215,7 @@ const Navbar = ({ showTopNav }: { showTopNav: boolean }) => {
                           type="button"
                           onClick={() => {
                             setLocale(lng);
+                            router.push(getLocalizedPath(lng));
                             setIsLangOpen(false);
                           }}
                           role="menuitem"

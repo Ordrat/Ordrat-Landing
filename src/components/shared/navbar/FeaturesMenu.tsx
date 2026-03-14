@@ -15,7 +15,7 @@ import {
 import { cn } from '@/utils/cn';
 import nsImg420 from '@public/images/ns-img-420.jpg';
 import Image from 'next/image';
-import CompanyMenuItemLink from './CompanyMenuItemLink';
+import CompanyMenuItemLink from './FeaturesMenuItemLink';
 
 interface MenuItemProps {
   id: string;
@@ -34,32 +34,19 @@ const leftColumnMenuItems: MenuItemProps[] = [
     icon: <AboutIcon className="size-5" />,
   },
   {
-    id: 'services',
-    href: '/services',
-    title: 'Services',
+    id: 'store-types',
+    href: '/store-types',
+    title: 'Store Types',
     description: 'See how others are using NextSaaS',
     icon: <ServiceIcon className="size-5" />,
   },
+  
   {
-    id: 'our-team',
-    href: '/team',
-    title: 'Our Team',
-    description: 'Dynamic content solutions',
-    icon: <TeamIcon className="size-5" />,
-  },
-  {
-    id: 'career',
-    href: '/career',
-    title: 'Career',
+    id: 'services',
+    href: '/services',
+    title: 'Services',
     description: 'Free marketing templates',
-    icon: <CareerIcon />,
-  },
-  {
-    id: 'our-manifesto',
-    href: '/our-manifesto',
-    title: 'Our Manifesto',
-    description: 'Our core values and principles',
-    icon: <ManifestoIcon />,
+    icon: <ServiceIcon />,
   },
   {
     id: 'why-choose-us',

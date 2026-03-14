@@ -1,7 +1,7 @@
 'use client';
 
 import { Locale, defaultLocale, messages } from '@/app/i18n/messages';
-import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 interface LocaleContextType {
   locale: Locale;
@@ -27,8 +27,14 @@ const getValueByKey = (obj: unknown, key: string): unknown => {
   }, obj);
 };
 
-export const LocaleProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+export const LocaleProvider = ({
+  children,
+  initialLocale = defaultLocale,
+}: {
+  children: ReactNode;
+  initialLocale?: Locale;
+}) => {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
 
   const isRTL = locale === 'ar';
 
@@ -87,9 +93,9 @@ export const LocaleProvider = ({ children }: { children: ReactNode }) => {
     [locale],
   );
 
-  const setLocale = (nextLocale: Locale) => {
+  const setLocale = useCallback((nextLocale: Locale) => {
     setLocaleState(nextLocale);
-  };
+  }, []);
 
   return (
     <LocaleContext.Provider value={{ locale, isRTL, setLocale, t, tList }}>{children}</LocaleContext.Provider>

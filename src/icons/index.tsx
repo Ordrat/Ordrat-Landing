@@ -55,7 +55,7 @@ const CheckIconV3: FC<CheckIconV3Props> = ({ fill = 'default', className }) => (
 );
 
 const ArrowIcon: FC<ArrowIconProps> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" className={cn(className)} xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 24 24" fill="none" className={cn('rtl:-scale-x-100', className)} xmlns="http://www.w3.org/2000/svg">
     <path d="M3.75 12H20.25" stroke="inherit" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M13.5 5.25L20.25 12L13.5 18.75" stroke="inherit" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
