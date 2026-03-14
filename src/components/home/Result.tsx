@@ -1,5 +1,8 @@
+'use client';
+
 import NumberAnimation from '@/components/animation/NumberAnimation';
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import LinkButton from '@/components/ui/button/Button';
 import hotjarIcon from '@public/images/icons/hotjar.svg';
 import notionIcon from '@public/images/icons/notion-v2.svg';
@@ -12,22 +15,24 @@ import avatar42 from '@public/images/ns-avatar-42.jpg';
 import Image from 'next/image';
 
 const Result = () => {
+  const { t } = useLocale();
+
   return (
     <section
-      className="bg-[#003049] py-[80px] md:py-[120px] lg:py-[156px]"
+      className="bg-background-12 broder-background-12 xl:rounded-4xl py-[80px] md:py-[120px] lg:py-[156px]"
       aria-label="AI voice generator results and customer testimonials">
       <div className="main-container">
         <div className="space-y-12 md:space-y-19">
           <RevealAnimation delay={0.1}>
             <div className="space-y-4 text-center lg:text-left">
-              <span className="badge badge-white bg-white text-[var(--color-ordrat-blue-main)]">
-                Real-world impact
+              <span className="badge badge-white bg-secondary text-accent">
+                {t('home.result.badge')}
               </span>
-              <h2 className="text-primary-50 font-normal">
-                Proven results, <span className="text-[var(--color-ordrat-red-main)]">real voices</span>
+              <h2 className="text-ordrat-blue-main font-normal">
+                {t('home.result.titlePrefix')} <span className="text-[var(--color-ordrat-red-main)]">{t('home.result.titleAccent')}</span>
               </h2>
-              <p className="mx-auto max-w-[540px] text-tagline-1 font-normal text-primary-50/80 lg:mx-0">
-                See how brands use Ordrat to launch faster, scale content, and keep every customer interaction on‑brand.
+              <p className="mx-auto max-w-[540px] text-tagline-1 font-normal text-ordrat-blue-main lg:mx-0">
+                {t('home.result.description')}
               </p>
             </div>
           </RevealAnimation>
@@ -45,7 +50,7 @@ const Result = () => {
 
                   <div className="space-y-8">
                     <p className="text-secondary dark:text-accent">
-                      We easily converted scripts into natural voices and scaled our ad campaigns faster than ever.
+                        {t('home.result.testimonials.hotjar')}
                     </p>
 
                     <figure className="flex items-center gap-3">
@@ -73,19 +78,19 @@ const Result = () => {
                 {/* card two  */}
                 <RevealAnimation delay={0.3}>
                 <div className="dark:bg-background-5 flex h-[370px] flex-col items-start justify-between rounded-4xl bg-white p-6 xl:max-w-[316px]">
-                    <span className="badge badge-white text-primary-50 bg-[var(--color-ordrat-blue-main)] font-medium" aria-label="Content category: Case study">
-                      Case study
+                    <span className="badge badge-white text-primary-50 bg-background-9 font-medium" aria-label="Content category: Case study">
+                      {t('home.result.caseStudy')}
                     </span>
                     <div className="space-y-8">
                       <p className="text-secondary dark:text-accent pt-16 pb-8">
-                        SoundWave Studios boosts video output by 40% using AI-generated voices.
+                        {t('home.result.caseBody')}
                       </p>
 
                       <div className="w-[90%] md:w-auto">
                         <LinkButton
                           href="/case-study/ai-powered-patient-care-solutions-in-healthcare"
-                          btnClass="btn-md-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white">
-                          Read now
+                          btnClass="btn-md-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-secondary btn-arrow-white">
+                          {t('home.result.readNow')}
                         </LinkButton>
                       </div>
                     </div>
@@ -102,7 +107,7 @@ const Result = () => {
                     </h2>
 
                     <p className="font-normal text-white/80">
-                      less time spent on dubbing compared to traditional workflows.
+                      {t('home.result.lessTime')}
                     </p>
                   </div>
                 </RevealAnimation>
@@ -121,7 +126,7 @@ const Result = () => {
 
                     <div className="space-y-8">
                       <p className="text-secondary dark:text-accent">
-                        The voice clarity and tone customization blew us away!
+                        {t('home.result.testimonials.stripe')}
                       </p>
 
                       <figure className="flex items-center gap-3">
@@ -154,7 +159,7 @@ const Result = () => {
 
                     <div className="space-y-8">
                       <p className="text-secondary dark:text-accent">
-                        We instantly localize our campaigns with natural accents — no extra cost, no delays.
+                        {t('home.result.testimonials.notion')}
                       </p>
 
                       <figure className="flex items-center gap-3">
@@ -186,17 +191,17 @@ const Result = () => {
                     <span
                       className="badge badge-secondary bg-accent/10! font-normal"
                       aria-label="Content category: Case study">
-                      Case study
+                      {t('home.result.caseStudy')}
                     </span>
                     <p className="pt-5 pb-8 text-white">
-                      SoundWave Studios boosts video output by 40% using AI-generated voices.
+                      {t('home.result.caseBody')}
                     </p>
 
                     <div className="w-[90%] md:w-auto">
                       <LinkButton
                         href="/case-study/cove-financial-risk-management-and-compliance"
                         btnClass="btn-md-v2 bg-white text-secondary !border-0 hover:bg-[var(--color-ordrat-red-main)] hover:text-white btn-arrow-black btn-arrow-black-hover-white">
-                        Read now
+                        {t('home.result.readNow')}
                       </LinkButton>
                     </div>
                   </div>
@@ -211,8 +216,7 @@ const Result = () => {
 
                     <div className="space-y-8">
                       <p className="text-white/90">
-                        Our explainer videos now sound professional without hiring multiple voice actors. It's a total
-                        game-changer.
+                        {t('home.result.testimonials.scapic')}
                       </p>
 
                       <figure className="flex items-center gap-3">

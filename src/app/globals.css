@@ -12,3 +12,15 @@
 @import '../styles/lenis.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html[dir='rtl'] body {
+	direction: rtl;
+}
+
+body.locale-ar {
+	font-family: var(--font-tajawal), var(--font-interTight), sans-serif;
+}
+
+body.locale-ar .font-inter-tight {
+	font-family: var(--font-tajawal), var(--font-interTight), sans-serif !important;
+}

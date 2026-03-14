@@ -1,0 +1,201 @@
+{
+  "navbar": {
+    "features": "Features",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "partnership": "Partnership",
+    "resources": "Resources",
+    "home": "Home",
+    "language": "English",
+    "search": "Search",
+    "signIn": "Sign in",
+    "startFree": "Start for free",
+    "localeMenuLabel": "Choose language"
+  },
+  "topHeading": {
+    "primary": "Ordrat is your partner for faster e-commerce growth.",
+    "secondary": "Run orders, operations, and store management in one platform with Ordrat.",
+    "title": "Turn Every Order Into Growth",
+    "startNow": "Start Now!",
+    "learnMore": "Learn More"
+  },
+  "home": {
+    "hero": {
+      "badge": "Trusted worldwide in over 30 countries",
+      "titleLine1": "Create online store and QR Menu",
+      "titleLine2Prefix": "Fast and easy with",
+      "titleBrand": "Ordrat",
+      "subtitle": "We make your work more organized and easier with many modern features for",
+      "subtitleAccent": "managing your online store",
+      "dashboardAlt": "Ordrat dashboard - online store and restaurant management system"
+    },
+    "clients": {
+      "trustedBy": "Trusted by",
+      "creatorsAndBrands": "creators and brands worldwide"
+    },
+    "voiceStyle": {
+      "titlePrefix": "Ordrat",
+      "titleAccent": "Business",
+      "titleSuffix": "Types",
+      "description": "Boost your online sales with modern tools: digital QR Code menus, reservation and delivery systems through our platform, and much more!",
+      "voicesTitle": "Voices from around the world",
+      "voicesSubtitle": "Engage your audience in 30 languages.",
+      "languageLabel": "Language",
+      "podcasting": "Podcasting",
+      "languages": [
+        "English",
+        "Dutch",
+        "Chinese",
+        "Korean"
+      ]
+    },
+    "features": {
+      "badge": "Features",
+      "titlePrefix": "Discover the features of",
+      "titleAccent": "Ordrat",
+      "description": "Boost your online sales with modern tools: digital QR Code menus, reservation and delivery systems through our platform, and much more!",
+      "explore": "Explore features",
+      "cards": {
+        "apiTitle": "API integration",
+        "apiDescription": "Connect NextSaaS with your tools and automate voice workflows.",
+        "videoTitle": "Video editor + subtitle Generator",
+        "videoDescription": "Add voice, visuals, and subtitles all in one place.",
+        "multilingualTitle": "Multilingual & multi-accent voices",
+        "multilingualDescription": "100+ languages and regional accents.",
+        "ttsTitle": "Text to speech",
+        "ttsDescription": "Convert your script into ultra realistic speech.",
+        "ttsPrompt": "Describe the text you want to create, in any voice.",
+        "getStarted": "Get started",
+        "cloningTitle": "Voice cloning",
+        "cloningDescription": "Create a custom voice from just a few audio samples.",
+        "changerTitle": "AI voice changer",
+        "changerDescription": "Transform any voice into a professional-sounding tone."
+      }
+    },
+    "advantages": {
+      "titlePrefix": "Advantages of",
+      "titleAccent": "Ordrat",
+      "titleSuffix": "application",
+      "description": "A comprehensive app for managing your store, tracking all orders, analyzing store performance and profits, and marketing to customers.",
+      "items": [
+        "Branches",
+        "Dashboard",
+        "Delivery Management",
+        "Shop Profiles",
+        "Order Details",
+        "Delivery Picking"
+      ]
+    },
+    "steps": {
+      "headingPrefix": "Create stunning voiceover in",
+      "headingAccent": "4 simple steps",
+      "goToStep": "Go to step",
+      "list": [
+        {
+          "title": "Sign Up Free",
+          "description": "Visit ordrat.com, enter your business name, phone, and email. No credit card required."
+        },
+        {
+          "title": "Add Products",
+          "description": "Upload photos, write descriptions, set prices. Our AI suggests best titles."
+        },
+        {
+          "title": "Customize Store",
+          "description": "Choose a design template, add your logo and colors. Our team helps via free video call."
+        },
+        {
+          "title": "Go Live & Sell",
+          "description": "Share your store link on WhatsApp and Instagram. Start accepting orders instantly."
+        }
+      ]
+    },
+    "integration": {
+      "badge": "Integration",
+      "titlePrefix": "Seamless tool",
+      "titleAccent": "integration",
+      "description": "Easily connect NextSaaS Ai to Canva, Notion, Adobe, Google Slides, Webflow, and more.",
+      "explore": "Explore integration"
+    },
+    "result": {
+      "badge": "Real-world impact",
+      "titlePrefix": "Proven results,",
+      "titleAccent": "real voices",
+      "description": "See how brands use Ordrat to launch faster, scale content, and keep every customer interaction on-brand.",
+      "caseStudy": "Case study",
+      "caseBody": "SoundWave Studios boosts video output by 40% using AI-generated voices.",
+      "readNow": "Read now",
+      "lessTime": "less time spent on dubbing compared to traditional workflows.",
+      "testimonials": {
+        "hotjar": "We easily converted scripts into natural voices and scaled our ad campaigns faster than ever.",
+        "stripe": "The voice clarity and tone customization blew us away!",
+        "notion": "We instantly localize our campaigns with natural accents — no extra cost, no delays.",
+        "scapic": "Our explainer videos now sound professional without hiring multiple voice actors. It's a total game-changer."
+      }
+    },
+    "pricing": {
+      "badge": "Pricing plan",
+      "titlePrefix": "Flexible",
+      "titleAccent": "pricing",
+      "titleSuffix": "for every stage",
+      "description": "Choose a plan that fits your content goals—no hidden fees.",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "save 40%",
+      "monthSuffix": "/Month",
+      "yearSuffix": "/Year",
+      "plans": {
+        "free": {
+          "title": "Free Plan",
+          "description": "Core voice features",
+          "features": [
+            "Limited voice time",
+            "Basic voice styles",
+            "Watermarked output",
+            "Customizable voice styles"
+          ]
+        },
+        "pro": {
+          "title": "Pro Plan",
+          "description": "Advanced features + app publishing",
+          "features": [
+            "Extended voice time",
+            "Premium voice styles",
+            "30+ languages",
+            "No watermarks",
+            "Priority support",
+            "API access"
+          ]
+        },
+        "team": {
+          "title": "Team Plan",
+          "description": "Collaboration, integrations & support",
+          "features": [
+            "Unlimited voice time",
+            "All voice styles",
+            "30+ languages",
+            "Commercial license"
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise Plan",
+          "description": "Custom pricing – API access, white-label, and more",
+          "features": [
+            "Unlimited voice time",
+            "Voice cloning",
+            "Custom voice training",
+            "White-label solution"
+          ]
+        }
+      },
+      "getStarted": "Get started"
+    },
+    "cta": {
+      "badge": "CTA",
+      "titlePrefix": "Start creating",
+      "titleAccent": "stunning voiceover",
+      "titleSuffix": "today",
+      "description": "Join thousands using NextSaaS to create lifelike voices—no mic, no hassle.",
+      "button": "Book your free strategy call"
+    }
+  }
+}

@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.ordrat.com',
       },
     ],
-    qualities: [25, 50, 75, 100],
+    qualities: [25, 50, 75, 85, 100],
   },
 };
 

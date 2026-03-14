@@ -1,5 +1,6 @@
 'use client';
 
+import { useLocale } from '@/context/LocaleContext';
 import LinkButton from '@/components/ui/button/Button';
 import { CheckIconV3 } from '@/icons';
 import { cn } from '@/utils/cn';
@@ -27,8 +28,9 @@ const PricingCard = ({
   highlight = false,
   isYearly,
 }: PricingCardProps) => {
+  const { t } = useLocale();
   const price = isYearly ? yearlyPrice : monthlyPrice;
-  const pricePeriod = isYearly ? '/Year' : '/Month';
+  const pricePeriod = isYearly ? t('home.pricing.yearSuffix') : t('home.pricing.monthSuffix');
 
   return (
     <div
@@ -90,7 +92,9 @@ const PricingCard = ({
           <div className={cn('mb-6 hidden', isYearly ? 'price-month' : 'price-year')}>
             <h4 className="text-heading-4 font-normal">
               ${isYearly ? monthlyPrice : yearlyPrice}
-              <span className="text-tagline-2">{isYearly ? '/Month' : '/Year'}</span>
+              <span className="text-tagline-2">
+                {isYearly ? t('home.pricing.monthSuffix') : t('home.pricing.yearSuffix')}
+              </span>
             </h4>
           </div>
           <div className="w-full">
@@ -99,8 +103,8 @@ const PricingCard = ({
               btnClass={cn(
                 'btn-md w-full',
                 highlight
-                  ? 'bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white'
-                  : 'bg-[var(--color-ordrat-blue-main)] text-white border-0 hover:bg-white hover:text-[var(--color-ordrat-blue-main)] btn-arrow-white hover:btn-arrow-black',
+                  ? 'bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-secondary btn-arrow-white'
+                  : 'bg-secondary text-white border-0 hover:bg-white hover:text-[var(--color-ordrat-blue-main)] btn-arrow-white hover:btn-arrow-black',
               )}>
               {buttonText}
             </LinkButton>

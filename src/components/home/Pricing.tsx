@@ -1,6 +1,7 @@
 'use client';
 
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import { useState } from 'react';
 import PricingCard from './PricingCard';
 
@@ -16,62 +17,56 @@ interface PricingPlan {
   highlight: boolean;
 }
 
-const pricingPlans: PricingPlan[] = [
-  {
-    id: 'free-plan',
-    title: 'Free Plan',
-    description: 'Core voice features',
-    features: ['Limited voice time', 'Basic voice styles', 'Watermarked output', 'Customizable voice styles'],
-    monthlyPrice: 40,
-    yearlyPrice: 90,
-    buttonText: 'Get started',
-    buttonHref: '/contact',
-    highlight: false,
-  },
-  {
-    id: 'pro-plan',
-    title: 'Pro Plan',
-    description: 'Advanced features + app publishing',
-    features: [
-      'Extended voice time',
-      'Premium voice styles',
-      '30+ languages',
-      'No watermarks',
-      'Priority support',
-      'API access',
-    ],
-    monthlyPrice: 19,
-    yearlyPrice: 79,
-    buttonText: 'Get started',
-    buttonHref: '/contact',
-    highlight: true,
-  },
-  {
-    id: 'team-plan',
-    title: 'Team Plan',
-    description: 'Collaboration, integrations & support',
-    features: ['Unlimited voice time', 'All voice styles', '30+ languages', 'Commercial license'],
-    monthlyPrice: 49,
-    yearlyPrice: 99,
-    buttonText: 'Get started',
-    buttonHref: '/contact',
-    highlight: false,
-  },
-  {
-    id: 'enterprise-plan',
-    title: 'Enterprise Plan',
-    description: 'Custom pricing – API access, white-label, and more',
-    features: ['Unlimited voice time', 'Voice cloning', 'Custom voice training', 'White-label solution'],
-    monthlyPrice: 60,
-    yearlyPrice: 120,
-    buttonText: 'Get started',
-    buttonHref: '/contact',
-    highlight: false,
-  },
-];
-
 const Pricing = () => {
+  const { t, tList } = useLocale();
   const [isYearly, setIsYearly] = useState(false);
+
+  const pricingPlans: PricingPlan[] = [
+    {
+      id: 'free-plan',
+      title: t('home.pricing.plans.free.title'),
+      description: t('home.pricing.plans.free.description'),
+      features: tList('home.pricing.plans.free.features'),
+      monthlyPrice: 40,
+      yearlyPrice: 90,
+      buttonText: t('home.pricing.getStarted'),
+      buttonHref: '/contact',
+      highlight: false,
+    },
+    {
+      id: 'pro-plan',
+      title: t('home.pricing.plans.pro.title'),
+      description: t('home.pricing.plans.pro.description'),
+      features: tList('home.pricing.plans.pro.features'),
+      monthlyPrice: 19,
+      yearlyPrice: 79,
+      buttonText: t('home.pricing.getStarted'),
+      buttonHref: '/contact',
+      highlight: true,
+    },
+    {
+      id: 'team-plan',
+      title: t('home.pricing.plans.team.title'),
+      description: t('home.pricing.plans.team.description'),
+      features: tList('home.pricing.plans.team.features'),
+      monthlyPrice: 49,
+      yearlyPrice: 99,
+      buttonText: t('home.pricing.getStarted'),
+      buttonHref: '/contact',
+      highlight: false,
+    },
+    {
+      id: 'enterprise-plan',
+      title: t('home.pricing.plans.enterprise.title'),
+      description: t('home.pricing.plans.enterprise.description'),
+      features: tList('home.pricing.plans.enterprise.features'),
+      monthlyPrice: 60,
+      yearlyPrice: 120,
+      buttonText: t('home.pricing.getStarted'),
+      buttonHref: '/contact',
+      highlight: false,
+    },
+  ];
 
   return (
     <section className="py-[80px] md:py-[150px]">
@@ -81,17 +76,17 @@ const Pricing = () => {
             {/* heading  */}
             <div className="space-y-5 text-center">
               <RevealAnimation delay={0.1}>
-                <span className="badge bg-[var(--color-ordrat-blue-main)] text-white font-medium">Pricing plan</span>
+                <span className="badge bg-background-9 text-white font-medium">{t('home.pricing.badge')}</span>
               </RevealAnimation>
               <div className="space-y-3 text-center">
                 <RevealAnimation delay={0.2}>
                   <h2 className="font-normal">
-                    Flexible <span className="text-[#D63848]">pricing</span> for every stage
+                    {t('home.pricing.titlePrefix')} <span className="text-[#D63848]">{t('home.pricing.titleAccent')}</span> {t('home.pricing.titleSuffix')}
                   </h2>
                 </RevealAnimation>
                 <RevealAnimation delay={0.3}>
                   <p className="text-tagline-1 text-secondary font-normal">
-                    Choose a plan that fits your content goals—no hidden fees.
+                    {t('home.pricing.description')}
                   </p>
                 </RevealAnimation>
               </div>
@@ -102,12 +97,12 @@ const Pricing = () => {
               <div className="relative z-0 mx-auto w-full max-w-[293px]">
                 <RevealAnimation delay={1} duration={1} direction="up" offset={200}>
                   <span className="bg-[var(--color-ordrat-red-main)] text-tagline-2 absolute -top-2.5 -right-6 z-11 inline-block w-[90px] rotate-20 rounded-[36px] px-3.5 py-1.5 font-medium text-white capitalize shadow-xs">
-                    save 40%
+                    {t('home.pricing.save')}
                   </span>
                 </RevealAnimation>
-                <label className="shadow-1 relative z-10 inline-flex cursor-pointer items-center rounded-full bg-[var(--color-ordrat-blue-main)] px-10 py-4">
-                  <span className="mr-4 inline-flex items-center rounded-full bg-[var(--color-ordrat-blue-main)] px-3 py-1 text-sm font-normal text-white">
-                    Monthly
+                <label className="shadow-1 relative z-10 inline-flex cursor-pointer items-center rounded-full bg-background-9 px-10 py-4">
+                  <span className="mr-4 inline-flex items-center rounded-full px-3 py-1 text-sm font-normal text-white">
+                    {t('home.pricing.monthly')}
                   </span>
                   <input
                     type="checkbox"
@@ -118,8 +113,8 @@ const Pricing = () => {
                     onChange={(e) => setIsYearly(e.target.checked)}
                   />
                   <span className="border-stroke-1/30 after:bg-white before:bg-secondary relative h-[28px] w-13 rounded-[34px] border bg-transparent before:absolute before:-top-[5px] before:-left-[6px] before:-z-10 before:h-[36px] before:w-[62px] before:rounded-[34px] before:p-[5px] before:transition-all before:content-[''] after:absolute after:start-[2px] after:top-1/2 after:size-6 after:-translate-y-1/2 after:rounded-full after:transition-all after:content-[''] peer-checked:after:start-[2px] peer-checked:after:translate-x-[94%]"></span>
-                  <span className="ml-4 inline-flex items-center rounded-full bg-[var(--color-ordrat-blue-main)] px-3 py-1 text-sm font-normal text-white">
-                    Yearly
+                  <span className="ml-4 inline-flex items-center rounded-full px-3 py-1 text-sm font-normal text-white">
+                    {t('home.pricing.yearly')}
                   </span>
                 </label>
               </div>

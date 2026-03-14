@@ -1,6 +1,7 @@
 'use client';
 
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import { cn } from '@/utils/cn';
 import stepImage554 from '@public/home/steps/signUp.png';
 import stepImage556 from '@public/home/steps/products.png';
@@ -10,45 +11,42 @@ import { useLenis } from 'lenis/react';
 import { useEffect, useRef, useState } from 'react';
 import StepCard, { StepData } from './StepCard';
 
-const stepsData: StepData[] = [
-  {
-    id: 'step-1',
-    stepNumber: 1,
-    title: 'Sign Up Free',
-    description:
-      "Visit ordrat.com, enter your business name, phone, and email. No credit card required.",
-    mainImage: stepImage554,
-  },
-  {
-    id: 'step-2',
-    stepNumber: 2,
-    title: 'Add Products',
-    description:
-      'Upload photos, write descriptions, set prices. Our AI suggests best titles.',
-    mainImage: stepImage556,
-  },
-  {
-    id: 'step-3',
-    stepNumber: 3,
-    title: 'Customize Store',
-    description:
-      'Choose a design template, add your logo and colors. Our team helps via free video call.',
-    mainImage: stepImage557,
-  },
-  {
-    id: 'step-4',
-    stepNumber: 4,
-    title: 'Go Live & Sell',
-    description:
-      "Share your store link on WhatsApp and Instagram. Start accepting orders instantly.",
-    mainImage: stepImage558,
-  },
-];
-
 const Steps = () => {
+  const { t } = useLocale();
   const [activeStep, setActiveStep] = useState(1);
   const stepCardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const lenis = useLenis();
+
+  const stepsData: StepData[] = [
+    {
+      id: 'step-1',
+      stepNumber: 1,
+      title: t('home.steps.list.0.title'),
+      description: t('home.steps.list.0.description'),
+      mainImage: stepImage554,
+    },
+    {
+      id: 'step-2',
+      stepNumber: 2,
+      title: t('home.steps.list.1.title'),
+      description: t('home.steps.list.1.description'),
+      mainImage: stepImage556,
+    },
+    {
+      id: 'step-3',
+      stepNumber: 3,
+      title: t('home.steps.list.2.title'),
+      description: t('home.steps.list.2.description'),
+      mainImage: stepImage557,
+    },
+    {
+      id: 'step-4',
+      stepNumber: 4,
+      title: t('home.steps.list.3.title'),
+      description: t('home.steps.list.3.description'),
+      mainImage: stepImage558,
+    },
+  ];
 
   useEffect(() => {
     const stepCards = stepCardRefs.current.filter((ref): ref is HTMLDivElement => ref !== null);
@@ -113,7 +111,7 @@ const Steps = () => {
           {/* heading  */}
           <RevealAnimation delay={0.1}>
             <h2 className="top-[156px] max-w-[629px] text-center font-normal lg:sticky lg:text-left">
-              Create stunning voiceover in <span className="text-[#D63848]">4 simple steps</span>
+              {t('home.steps.headingPrefix')} <span className="text-[#D63848]">{t('home.steps.headingAccent')}</span>
             </h2>
           </RevealAnimation>
 
@@ -151,7 +149,7 @@ const Steps = () => {
                       : 'bg-[var(--color-ordrat-blue-main)] text-white hover:bg-[var(--color-ordrat-red-main)]',
                   )}
                   data-step-number={step.stepNumber}
-                  aria-label={`Go to step ${step.stepNumber}`}>
+                  aria-label={`${t('home.steps.goToStep')} ${step.stepNumber}`}>
                   {step.stepNumber}
                 </button>
               ))}

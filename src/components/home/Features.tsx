@@ -1,4 +1,7 @@
+'use client';
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import LinkButton from '@/components/ui/button/Button';
 import avatar39 from '@public/images/ns-avatar-39.png';
 import multilingualImage from '@public/images/ns-img-523.png';
@@ -10,29 +13,30 @@ import FeaturesWave from './FeaturesWave';
 import IntegrationCircle from './IntegrationCircle';
 
 const Features = () => {
+  const { t } = useLocale();
+
   return (
-    <section className="bg-[var(--color-ordrat-blue-main)] py-[80px] md:py-[120px] lg:py-[176px]">
+    <section className="bg-background-12 border-background-12 xl:rounded-4xl py-[80px] md:py-[120px] lg:py-[176px]">
       <div className="main-container">
         <div className="space-y-[76px]">
           <div className="flex flex-col items-center justify-between gap-y-5 lg:flex-row">
             {/* content  */}
             <div className="space-y-5 text-center text-white lg:text-left">
               <RevealAnimation delay={0.1}>
-                <span className="badge badge-white text-secondary bg-white font-medium">Features</span>
+                <span className="badge badge-white text-accent  bg-background-9 font-medium">{t('home.features.badge')}</span>
               </RevealAnimation>
 
               <div className="space-y-3">
                 <RevealAnimation delay={0.2}>
                   <h2
                     id="services-heading"
-                    className="mx-auto max-w-[450px] text-center text-white lg:mx-0 lg:max-w-[505px] lg:text-left">
-                    Powerful <span className="text-[var(--color-ordrat-red-main)]">AI voice </span> tools built for
-                    everyone
+                    className="mx-auto max-w-[450px] text-center text-ordrat-blue-main lg:mx-0 lg:max-w-[505px] lg:text-left">
+                    {t('home.features.titlePrefix')} <span className="text-[var(--color-ordrat-red-main)]">{t('home.features.titleAccent')}</span>
                   </h2>
                 </RevealAnimation>
                 <RevealAnimation delay={0.3}>
-                  <p className="mx-auto max-w-[400px] text-center text-white/80 lg:mx-0 lg:text-left">
-                    From creators to enterprises, NextSaaS helps you produce high-quality voiceover without the studio.
+                  <p className="mx-auto max-w-[400px] text-center text-ordrat-blue-main lg:mx-0 lg:text-left">
+                    {t('home.features.description')}
                   </p>
                 </RevealAnimation>
               </div>
@@ -43,8 +47,8 @@ const Features = () => {
                 <div className="mx-auto w-[90%] text-center md:w-auto lg:text-right">
                   <LinkButton
                     href="/features"
-                    btnClass="btn-xl-v2 bg-[var(--color-ordrat-red-main)] text-white hover:text-secondary border-0 hover:bg-[var(--color-primary-50)] btn-arrow-white hover:btn-arrow-black">
-                    Explore features
+                    btnClass="btn-xl-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-secondary btn-arrow-white">
+                    {t('home.features.explore')}
                   </LinkButton>
                 </div>
               </div>
@@ -59,8 +63,8 @@ const Features = () => {
               <RevealAnimation delay={0.1}>
                 <div className="relative h-[350px] w-full max-w-[642px] space-y-[98px] overflow-hidden rounded-4xl bg-white p-8 md:p-[42px] lg:h-[450px]">
                   <div className="space-y-1">
-                    <h3 className="text-heading-5 text-secondary/80 font-normal">API integration</h3>
-                    <p className="max-w-[300px]">Connect NextSaaS with your tools and automate voice workflows.</p>
+                    <h3 className="text-heading-5 text-secondary/80 font-normal">{t('home.features.cards.apiTitle')}</h3>
+                    <p className="max-w-[300px]">{t('home.features.cards.apiDescription')}</p>
                   </div>
 
                   {/* logo circle  */}
@@ -76,8 +80,8 @@ const Features = () => {
                 {/* card two  */}
                 <RevealAnimation delay={0.2}>
                   <div className="w-full shrink-0 space-y-1 rounded-4xl bg-white p-8 lg:h-[221px] lg:p-[42px]">
-                    <h3 className="text-heading-5 text-secondary/80 font-normal">Video editor + subtitle Generator</h3>
-                    <p className="max-w-[230px]">Add voice, visuals, and subtitles all in one place.</p>
+                    <h3 className="text-heading-5 text-secondary/80 font-normal">{t('home.features.cards.videoTitle')}</h3>
+                    <p className="max-w-[230px]">{t('home.features.cards.videoDescription')}</p>
                   </div>
                 </RevealAnimation>
 
@@ -85,9 +89,9 @@ const Features = () => {
                 <RevealAnimation delay={0.3}>
                   <div className="relative w-full shrink-0 space-y-1 overflow-hidden rounded-4xl bg-white p-8 lg:h-[221px] lg:p-[42px]">
                     <h3 className="text-heading-5 text-secondary/80 relative z-20 font-normal">
-                      Multilingual & multi-accent voices
+                      {t('home.features.cards.multilingualTitle')}
                     </h3>
-                    <p>100+ languages and regional accents.</p>
+                    <p>{t('home.features.cards.multilingualDescription')}</p>
 
                     {/* bg img  */}
                     <RevealAnimation delay={0.4} direction="right" offset={100}>
@@ -113,20 +117,20 @@ const Features = () => {
                 <div className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3">
                   <div className="flex h-[450px] flex-col items-start justify-between rounded-4xl bg-white p-8 md:p-[42px] xl:w-[317px]">
                     <div className="space-y-1">
-                      <h3 className="text-heading-5 text-secondary/80 font-normal">Text to speech</h3>
-                      <p>Convert your script into ultra realistic speech.</p>
+                      <h3 className="text-heading-5 text-secondary/80 font-normal">{t('home.features.cards.ttsTitle')}</h3>
+                      <p>{t('home.features.cards.ttsDescription')}</p>
                     </div>
 
                     <div className="bg-background-12 flex h-[230px] w-full flex-col justify-between rounded-xl p-4 xl:max-w-[233px]">
                       <TypewriterAnimation className="text-secondary/40 text-tagline-2">
-                        Describe the text you want to create, in any voice.
+                        {t('home.features.cards.ttsPrompt')}
                       </TypewriterAnimation>
 
                       <div className="flex items-center justify-end text-right">
                         <LinkButton
                           href="/pricing"
                           btnClass="btn-sm-v2 bg-[var(--color-ordrat-red-main)] text-white border-0 hover:bg-[var(--color-ordrat-blue-main)] btn-arrow-white">
-                          Get started
+                          {t('home.features.cards.getStarted')}
                         </LinkButton>
                       </div>
                     </div>
@@ -151,8 +155,8 @@ const Features = () => {
                   </RevealAnimation>
 
                   <div className="relative z-20 space-y-1">
-                    <h3 className="text-heading-5 text-secondary/80 font-normal">Voice cloning</h3>
-                    <p>Create a custom voice from just a few audio samples.</p>
+                    <h3 className="text-heading-5 text-secondary/80 font-normal">{t('home.features.cards.cloningTitle')}</h3>
+                    <p>{t('home.features.cards.cloningDescription')}</p>
                   </div>
 
                   <div className="flex h-auto w-full flex-col justify-between space-y-2.5 rounded-xl p-4 max-sm:items-center md:max-w-[233px] lg:h-[166px]">
@@ -246,8 +250,8 @@ const Features = () => {
               <RevealAnimation delay={0.6}>
                 <div className="col-span-12 h-[450px] w-full space-y-[74px] rounded-4xl bg-white pt-[42px] lg:col-span-4 lg:max-w-[500px] xl:col-span-6 xl:max-w-[642px]">
                   <div className="space-y-1 px-[42px]">
-                    <h3 className="text-heading-5 text-secondary/80 font-normal">AI voice changer</h3>
-                    <p>Transform any voice into a professional-sounding tone.</p>
+                    <h3 className="text-heading-5 text-secondary/80 font-normal">{t('home.features.cards.changerTitle')}</h3>
+                    <p>{t('home.features.cards.changerDescription')}</p>
                   </div>
 
                   {/* mic and wave   */}

@@ -1,4 +1,7 @@
+'use client';
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import podcastingImage from '@public/images/ns-img-545.png';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
@@ -12,18 +15,29 @@ interface Language {
 }
 
 const VoiceStyle = () => {
+  const { t, tList } = useLocale();
+  const languageNames = tList('home.voiceStyle.languages');
+
   const languages: Language[] = [
     {
       flagSrc: '/images/icons/united-kindom-flag.svg',
       flagAlt: 'United Kingdom flag representing English language',
-      name: 'English',
+      name: languageNames[0] ?? 'English',
     },
-    { flagSrc: '/images/icons/germany-flag.svg', flagAlt: 'Germany flag representing Dutch language', name: 'Dutch' },
-    { flagSrc: '/images/icons/china-flag.svg', flagAlt: 'China flag representing Chinese language', name: 'Chinese' },
+    {
+      flagSrc: '/images/icons/germany-flag.svg',
+      flagAlt: 'Germany flag representing Dutch language',
+      name: languageNames[1] ?? 'Dutch',
+    },
+    {
+      flagSrc: '/images/icons/china-flag.svg',
+      flagAlt: 'China flag representing Chinese language',
+      name: languageNames[2] ?? 'Chinese',
+    },
     {
       flagSrc: '/images/icons/south-korea-flag.svg',
       flagAlt: 'South Korea flag representing Korean language',
-      name: 'Korean',
+      name: languageNames[3] ?? 'Korean',
     },
   ];
 
@@ -35,12 +49,13 @@ const VoiceStyle = () => {
             {/* content  */}
             <div className="ml-0 w-full space-y-3 text-center xl:max-w-[398px] xl:text-left">
               <RevealAnimation delay={0.1}>
-                <h1 className="font-normal" id="voice-styles-section-heading">
-                  Discover the features of  <span className="text-[#D63848]">Ordrat</span>
-                </h1>
+                <h2 className="font-normal" id="voice-styles-section-heading">
+                  {t('home.voiceStyle.titlePrefix')} <span className="text-[#D63848]">{t('home.voiceStyle.titleAccent')}</span>{' '}
+                  {t('home.voiceStyle.titleSuffix')}
+                </h2>
               </RevealAnimation>
               <RevealAnimation delay={0.2}>
-                <p>Boost your online sales with modern tools: digital QR Code menus, reservation and delivery systems through our platform, and much more!</p>
+                <p>{t('home.voiceStyle.description')}</p>
               </RevealAnimation>
             </div>
 
@@ -61,9 +76,9 @@ const VoiceStyle = () => {
                 className="w-full max-w-[695px] space-y-[89px] rounded-4xl border border-[var(--color-ordrat-red-light)] p-6 xl:max-w-[560px]"
                 aria-labelledby="languages-heading">
                 <div className="space-y-2">
-                  <p className="text-secondary text-tagline-1 font-normal">Voices from around the world</p>
+                  <p className="text-secondary text-tagline-1 font-normal">{t('home.voiceStyle.voicesTitle')}</p>
                   <h3 id="languages-heading" className="text-heading-5 font-normal">
-                    Engage your audience in 30 languages.
+                    {t('home.voiceStyle.voicesSubtitle')}
                   </h3>
                 </div>
 
@@ -72,7 +87,7 @@ const VoiceStyle = () => {
                   className="relative w-full space-y-[14px] overflow-hidden rounded-2xl bg-[var(--color-ordrat-red-main)] p-4 xl:max-w-[512px]"
                   aria-labelledby="language-marquee-heading">
                   <h4 id="language-marquee-heading" className="text-heading-6 relative z-20 font-normal text-white">
-                    Language
+                    {t('home.voiceStyle.languageLabel')}
                   </h4>
 
                   <div className="overflow-hidden" aria-label="Available languages for AI voice generation">
@@ -130,7 +145,7 @@ const VoiceStyle = () => {
                   />
                 </figure>
                 <h3 className="text-tagline-1 text-secondary absolute left-1/2 h-10 w-[202px] -translate-x-1/2 translate-y-0 rounded-full bg-white px-4 py-2 opacity-0 backdrop-blur-[15px] transition-all duration-600 ease-in-out group-hover:-translate-y-12 group-hover:opacity-100">
-                  Podcasting
+                  {t('home.voiceStyle.podcasting')}
                 </h3>
               </div>
             </RevealAnimation>

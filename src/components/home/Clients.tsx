@@ -1,4 +1,7 @@
+'use client';
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 
@@ -31,6 +34,8 @@ const clientLogos: ClientLogo[] = [
 ];
 
 const Clients = () => {
+  const { t } = useLocale();
+
   return (
     <section
       className="py-16 lg:py-28 xl:py-39"
@@ -40,8 +45,8 @@ const Clients = () => {
         <div className="relative overflow-hidden text-center">
           <RevealAnimation delay={0.1}>
             <h2 id="clients-heading" className="mx-auto mb-14 max-w-[800px] text-center font-normal">
-              Trusted by
-              <span className="text-[#D63848]"> 10,000+</span> creators and brands worldwide
+              {t('home.clients.trustedBy')}
+              <span className="text-[#D63848]"> 10,000+</span> {t('home.clients.creatorsAndBrands')}
             </h2>
           </RevealAnimation>
 

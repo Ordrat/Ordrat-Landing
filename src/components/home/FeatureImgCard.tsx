@@ -18,15 +18,15 @@ const FeatureImgCard = ({ title, imageSrc, className }: FeatureImgCardProps) => 
       <h3 className="text-heading-5 text-center font-normal" itemProp="name">
         {title}
       </h3>
-      <figure className="max-w-85.75 overflow-hidden rounded-4xl max-sm:h-75">
+      <figure className="max-w-85.75 overflow-hidden rounded-4xl">
         <Image
           src={imageSrc}
-          alt={`Visual representation of ${title} use case for AI voice generator`}
-          className="size-full object-cover"
+          alt={`Visual representation of ${title} use case`}
+          className="w-full h-auto"
           itemProp="contentUrl"
           title={`${title} use case image`}
           width={343}
-          height={300}
+          height={600}
         />
       </figure>
     </div>

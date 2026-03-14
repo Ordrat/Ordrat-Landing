@@ -7,10 +7,10 @@ const MenuCloseButton = () => {
   return (
     <button
       onClick={closeMenu}
-      className="nav-hamburger-close bg-background-4 dark:bg-background-9 relative flex size-10 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-full">
+      className="relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-ordrat-red-main transition-all duration-200 hover:scale-105 hover:bg-ordrat-red-main/90">
       <span className="sr-only">Close Menu</span>
-      <span className="bg-stroke-9/60 dark:bg-stroke-1 absolute block h-0.5 w-4 rotate-45" />
-      <span className="bg-stroke-9/60 dark:bg-stroke-1 absolute block h-0.5 w-4 -rotate-45" />
+      <span className="absolute block h-0.5 w-6 rotate-45 bg-white" />
+      <span className="absolute block h-0.5 w-6 -rotate-45 bg-white" />
     </button>
   );
 };
