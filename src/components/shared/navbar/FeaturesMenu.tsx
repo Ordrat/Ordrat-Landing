@@ -2,12 +2,9 @@
 'use client';
 import {
   AboutIcon,
-  CareerIcon,
   CaseStudyICon,
   CustomersIcon,
-  ManifestoIcon,
   ServiceIcon,
-  TeamIcon,
   TestimonialIcon,
   UseCaseIcon,
   WhyChooseUsIcon,
@@ -26,41 +23,34 @@ interface MenuItemProps {
 }
 
 const leftColumnMenuItems: MenuItemProps[] = [
-  {
-    id: 'about-us',
-    href: '/about',
-    title: 'About Us',
-    description: 'See how others are using NextSaaS',
-    icon: <AboutIcon className="size-5" />,
-  },
+
   {
     id: 'store-types',
     href: '/store-types',
     title: 'Store Types',
-    description: 'See how others are using NextSaaS',
+    description: 'Explore our solutions for different store types',
     icon: <ServiceIcon className="size-5" />,
   },
-  
   {
-    id: 'services',
-    href: '/services',
-    title: 'Services',
-    description: 'Free marketing templates',
-    icon: <ServiceIcon />,
+    id: 'ordering-system',
+    href: '/ordering-system',
+    title: 'Ordering System',
+    description: 'Streamline your ordering process with our intuitive system',
+    icon: <AboutIcon className="size-5" />,
   },
   {
-    id: 'why-choose-us',
-    href: '/why-choose-us',
-    title: 'Why Choose Us',
-    description: 'Our unique selling points and competitive advantages',
+    id: 'order-onsite',
+    href: '/order-onsite',
+    title: 'On-site Ordering',
+    description: 'On-site ordering system for your restaurant',
     icon: <WhyChooseUsIcon />,
   },
   {
-    id: 'customers',
-    href: '/customer',
-    title: 'Customers',
-    description: 'Schedule your demo today',
-    icon: <CustomersIcon />,
+    id: 'qr-code-menu',
+    href: '/qr-code-menu',
+    title: 'QR Code Menu',
+    description: 'Easy-to-use QR code menu system for your restaurant',
+    icon: <ServiceIcon />,
   },
 ];
 
@@ -108,33 +98,38 @@ const CompanyMenu = ({
           <ul id="product-dropdown-menu" className="flex-1 space-y-1">
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
-              href="/use-case"
-              title="Use Cases"
-              description="See how others are using NextSaaS"
+              href="/marketing-tools"
+              title="Marketing Tools"
+              description="Boost your sales with our marketing tools"
               icon={<UseCaseIcon />}
               showDivider={true}
             />
 
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
-              href="/case-study"
-              title="Case Studies"
-              description="Real-world examples of our work"
+              href="/free-setup-service"
+              title="Free Setup Service"
+              description="Get your store up and running for free"
               icon={<CaseStudyICon />}
               showDivider={true}
             />
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
-              href="/testimonial"
-              title="Testimonials"
-              description="What our customers say about us"
-              icon={<TestimonialIcon />}
+              href="/reservations"
+              title="Reservations System"
+              description="Book a demo or consultation with our team"
+              icon={<CaseStudyICon />}
+              showDivider={true}
+            />
+            <CompanyMenuItemLink
+              setMenuDropdownId={setMenuDropdownId}
+              href="/website-templates"
+              title="Website Templates"
+              description="Pre-designed templates for your business"
+              icon={<CustomersIcon />}
               showDivider={false}
             />
           </ul>
-          <figure className="relative min-h-[220px] w-full max-w-full overflow-hidden rounded-[14px]">
-            <Image src={nsImg420} alt="What's New" className="h-full w-full rounded-[14px] object-cover" />
-          </figure>
         </div>
       </div>
     </div>
