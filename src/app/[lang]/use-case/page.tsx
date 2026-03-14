@@ -1,8 +1,8 @@
 import CTA from '@/components/shared/cta/CTA';
 import FeatureIntro from '@/components/use-case/FeatureIntro';
+import FinanceAndOperation from '@/components/use-case/FinanceAndOperation';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
-import FinanceAndOperation from '../../components/use-case/FinanceAndOperation';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
