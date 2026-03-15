@@ -2,7 +2,7 @@ import Benefits from '@/components/pricing/Benefits';
 import Contact from '@/components/pricing/Contact';
 import Features from '@/components/pricing/Features';
 import Pricing from '@/components/pricing/Pricing';
-import CTA from '@/components/shared/cta/CTA';
+import PricingCTA from '@/components/pricing/PricingCTA';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
@@ -18,13 +18,7 @@ const page = () => {
       <Benefits />
       <Features />
       <Contact />
-      <CTA
-        className="bg-white"
-        badgeText="Get started"
-        ctaHeading="Build a complete website using the assistance"
-        description="Start your free trial today and see your ideas come to life easily and creatively."
-        ctaBtnText="Get started"
-      />
+      <PricingCTA />
     </main>
   );
 };

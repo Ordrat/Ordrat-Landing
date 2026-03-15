@@ -12,6 +12,7 @@ interface CTACheckListProps {
   listTextClass?: string;
   listAnimationDelay?: number;
   checkListVariant?: 'default' | 'gray';
+  checkIconBgClass?: string;
 }
 
 const CTACheckList = ({
@@ -21,6 +22,7 @@ const CTACheckList = ({
   listClass,
   listAnimationDelay = 0.7,
   checkListVariant = 'default',
+  checkIconBgClass,
 }: CTACheckListProps) => {
   return (
     <ul className={cn('flex flex-col items-center justify-center sm:flex-row', className)} aria-label="cta-check-list">
@@ -30,8 +32,8 @@ const CTACheckList = ({
             <span
               className={cn(
                 'flex size-[18px] items-center justify-center rounded-full',
-                checkListVariant === 'gray' && 'bg-accent/10 dark:bg-accent/10',
-                checkListVariant === 'default' && 'bg-secondary dark:bg-accent',
+                checkIconBgClass ??
+                  (checkListVariant === 'gray' ? 'bg-accent/10 dark:bg-accent/10' : 'bg-secondary dark:bg-accent'),
               )}>
               <span className="flex size-5 shrink-0 items-center justify-center">
                 <CheckIcon className={cn(checkListVariant === 'gray' && 'dark:fill-accent')} />

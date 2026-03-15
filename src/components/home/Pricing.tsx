@@ -10,6 +10,8 @@ interface PricingPlan {
   title: string;
   description: string;
   features: string[];
+  priceLabel: string;
+  popularLine?: string;
   monthlyPrice: number;
   yearlyPrice: number;
   buttonText: string;
@@ -27,9 +29,10 @@ const Pricing = () => {
       title: t('home.pricing.plans.free.title'),
       description: t('home.pricing.plans.free.description'),
       features: tList('home.pricing.plans.free.features'),
-      monthlyPrice: 40,
-      yearlyPrice: 90,
-      buttonText: t('home.pricing.getStarted'),
+      priceLabel: t('home.pricing.plans.free.priceLabel'),
+      monthlyPrice: 0,
+      yearlyPrice: 0,
+      buttonText: t('home.pricing.startForFree'),
       buttonHref: '/contact',
       highlight: false,
     },
@@ -38,9 +41,11 @@ const Pricing = () => {
       title: t('home.pricing.plans.pro.title'),
       description: t('home.pricing.plans.pro.description'),
       features: tList('home.pricing.plans.pro.features'),
-      monthlyPrice: 19,
-      yearlyPrice: 79,
-      buttonText: t('home.pricing.getStarted'),
+      priceLabel: t('home.pricing.plans.pro.priceLabel'),
+      popularLine: t('home.pricing.plans.pro.popularLine'),
+      monthlyPrice: 50,
+      yearlyPrice: 50,
+      buttonText: t('home.pricing.subscribeNow'),
       buttonHref: '/contact',
       highlight: true,
     },
@@ -49,20 +54,10 @@ const Pricing = () => {
       title: t('home.pricing.plans.team.title'),
       description: t('home.pricing.plans.team.description'),
       features: tList('home.pricing.plans.team.features'),
-      monthlyPrice: 49,
-      yearlyPrice: 99,
-      buttonText: t('home.pricing.getStarted'),
-      buttonHref: '/contact',
-      highlight: false,
-    },
-    {
-      id: 'enterprise-plan',
-      title: t('home.pricing.plans.enterprise.title'),
-      description: t('home.pricing.plans.enterprise.description'),
-      features: tList('home.pricing.plans.enterprise.features'),
-      monthlyPrice: 60,
-      yearlyPrice: 120,
-      buttonText: t('home.pricing.getStarted'),
+      priceLabel: t('home.pricing.plans.team.priceLabel'),
+      monthlyPrice: 1000,
+      yearlyPrice: 1000,
+      buttonText: t('home.pricing.subscribeNow'),
       buttonHref: '/contact',
       highlight: false,
     },
@@ -123,13 +118,15 @@ const Pricing = () => {
 
           {/* plans  */}
           <div className="relative">
-            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
               {pricingPlans.map((plan, index) => (
                 <RevealAnimation key={plan.id} delay={0.4 + index * 0.1}>
                   <PricingCard
                     title={plan.title}
                     description={plan.description}
                     features={plan.features}
+                    priceLabel={plan.priceLabel}
+                    popularLine={plan.popularLine}
                     monthlyPrice={plan.monthlyPrice}
                     yearlyPrice={plan.yearlyPrice}
                     buttonText={plan.buttonText}

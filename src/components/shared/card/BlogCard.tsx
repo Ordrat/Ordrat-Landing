@@ -1,3 +1,6 @@
+'use client';
+
+import { useLocale } from '@/context/LocaleContext';
 import { IBlogPost } from '@/interface';
 import { cn } from '@/utils/cn';
 import Image from 'next/image';
@@ -10,6 +13,8 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ blog, className }: BlogCardProps) => {
+  const { t } = useLocale();
+
   return (
     <article>
       <div
@@ -22,27 +27,27 @@ const BlogCard = ({ blog, className }: BlogCardProps) => {
             src={blog?.thumbnail}
             width={409}
             height={250}
-            alt="Illustration representing electronic prescription in finance sector"
+            alt={blog?.title}
             loading="lazy"
             className="h-full w-full object-cover"
           />
         </figure>
         <div className="space-y-6 p-6">
           <div className="flex items-center gap-2">
-            <span className="badge badge-ivory mr-1">
+            <span className="badge me-1 bg-secondary text-accent">
               <Link href={`/blog?category=${blog?.tag.toLowerCase()}`}>{blog?.tag}</Link>
             </span>
             <span rel="author" className="text-tagline-3 text-secondary/60 font-normal">
               {blog?.author}
             </span>
             <span className="h-[6px] w-[5px] rounded-full bg-[#ECE8FF]"> </span>
-            <time dateTime="2025-03-20" className="text-tagline-3 text-secondary/60 font-normal">
+            <time dateTime={blog?.publishDate} className="text-tagline-3 text-secondary/60 font-normal">
               {blog?.publishDate}
             </time>
           </div>
           <div>
             <h3 className="sm:text-heading-5 text-heading-6 mb-2 line-clamp-2 font-normal">
-              <Link href={`/blog/${blog.slug}`} aria-label="Read more about electronic prescription in finance sector">
+              <Link href={`/blog/${blog.slug}`} aria-label={blog?.title}>
                 {blog?.title}
               </Link>
             </h3>
@@ -51,9 +56,9 @@ const BlogCard = ({ blog, className }: BlogCardProps) => {
           <div className="flex justify-start md:block">
             <LinkButton
               href={`/blog/${blog.slug}`}
-              btnClass="btn-secondary-v2 group-hover/btn-v2:btn-primary-v2 btn-md-v2 text-white w-full sm:w-auto"
-              aria-label="Read full article about electronic prescription">
-              Read more
+              btnClass="bg-ordrat-red-main text-accent btn-arrow-white hover:bg-secondary hover:text-accent btn-md-v2 w-full sm:w-auto"
+              aria-label={blog?.title}>
+              {t('blog.readMore')}
             </LinkButton>
           </div>
         </div>

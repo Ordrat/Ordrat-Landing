@@ -9,6 +9,8 @@ interface PricingCardProps {
   title: string;
   description: string;
   features: string[];
+  priceLabel?: string;
+  popularLine?: string;
   monthlyPrice: number;
   yearlyPrice: number;
   buttonText: string;
@@ -21,6 +23,8 @@ const PricingCard = ({
   title,
   description,
   features,
+  priceLabel,
+  popularLine,
   monthlyPrice,
   yearlyPrice,
   buttonText,
@@ -40,10 +44,15 @@ const PricingCard = ({
       )}>
       <div
         className={cn(
-          'flex h-full flex-col gap-6 text-white',
+          'relative flex h-full flex-col gap-6 overflow-hidden text-white',
           highlight && 'rounded-[28px] bg-white p-6 text-secondary dark:bg-black dark:text-white',
         )}>
         <div className="mb-6">
+          {popularLine && (
+            <span className="bg-ordrat-red-main absolute top-4 right-4 z-10 inline-flex items-center justify-center rounded-full px-3 py-1 text-[11px] font-semibold tracking-[0.02em] text-white whitespace-nowrap capitalize shadow-sm">
+              {popularLine}
+            </span>
+          )}
           <h3
             className={cn(
               'text-heading-5 mb-2 font-normal',
@@ -79,27 +88,42 @@ const PricingCard = ({
             'mt-auto border-t pt-6',
             highlight ? 'border-black' : 'border-white/40',
           )}>
-          <div className={cn('mb-6', isYearly ? 'price-year' : 'price-month')}>
-            <h4
-              className={cn(
-                'text-heading-4 font-normal',
-                highlight ? 'text-secondary' : 'text-white',
-              )}>
-              ${price}
-              <span className="text-tagline-2">{pricePeriod}</span>
-            </h4>
-          </div>
-          <div className={cn('mb-6 hidden', isYearly ? 'price-month' : 'price-year')}>
-            <h4 className="text-heading-4 font-normal">
-              ${isYearly ? monthlyPrice : yearlyPrice}
-              <span className="text-tagline-2">
-                {isYearly ? t('home.pricing.monthSuffix') : t('home.pricing.yearSuffix')}
-              </span>
-            </h4>
-          </div>
-          <div className="w-full">
+          {priceLabel ? (
+            <div className="mb-6">
+              <h4
+                className={cn(
+                  'text-heading-4 font-normal',
+                  highlight ? 'text-secondary' : 'text-white',
+                )}>
+                {priceLabel}
+              </h4>
+            </div>
+          ) : (
+            <>
+              <div className={cn('mb-6', isYearly ? 'price-year' : 'price-month')}>
+                <h4
+                  className={cn(
+                    'text-heading-4 font-normal',
+                    highlight ? 'text-secondary' : 'text-white',
+                  )}>
+                  ${price}
+                  <span className="text-tagline-2">{pricePeriod}</span>
+                </h4>
+              </div>
+              <div className={cn('mb-6 hidden', isYearly ? 'price-month' : 'price-year')}>
+                <h4 className="text-heading-4 font-normal">
+                  ${isYearly ? monthlyPrice : yearlyPrice}
+                  <span className="text-tagline-2">
+                    {isYearly ? t('home.pricing.monthSuffix') : t('home.pricing.yearSuffix')}
+                  </span>
+                </h4>
+              </div>
+            </>
+          )}
+          <div className="flex w-full gap-3 max-sm:flex-col">
             <LinkButton
               href={buttonHref}
+              className="w-full"
               btnClass={cn(
                 'btn-md w-full',
                 highlight
@@ -107,6 +131,17 @@ const PricingCard = ({
                   : 'bg-secondary text-white border-0 hover:bg-white hover:text-[var(--color-ordrat-blue-main)] btn-arrow-white hover:btn-arrow-black',
               )}>
               {buttonText}
+            </LinkButton>
+            <LinkButton
+              href="/pricing"
+              className="w-full"
+              btnClass={cn(
+                'btn-md w-full',
+                highlight
+                  ? 'bg-white text-[var(--color-ordrat-red-main)] border border-[var(--color-ordrat-red-main)] hover:bg-[var(--color-ordrat-red-main)] hover:text-white hover:btn-arrow-white'
+                  : 'bg-white text-secondary border border-secondary/25 hover:bg-secondary hover:text-white btn-arrow-black hover:btn-arrow-white',
+              )}>
+              {t('home.pricing.planComparison')}
             </LinkButton>
           </div>
         </div>

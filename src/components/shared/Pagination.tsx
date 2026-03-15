@@ -74,8 +74,8 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange, class
         <button
           onClick={handlePrevious}
           disabled={currentPage === 1}
-          className="border-stroke-3 hover:bg-ns-linen stroke-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border duration-300 hover:stroke-white disabled:cursor-not-allowed">
-          <span>
+          className="border-stroke-3 hover:bg-ordrat-red-main stroke-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border duration-300 hover:stroke-white disabled:cursor-not-allowed">
+          <span className="rtl:-scale-x-100">
             <svg xmlns="http://www.w3.org/2000/svg" width={14} height={12} viewBox="0 0 14 12" fill="none">
               <path
                 d="M12.5 6H1.5M1.5 6L6 1.5M1.5 6L6 10.5"
@@ -101,8 +101,8 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange, class
               className={cn(
                 'text-tagline-2 flex h-10 w-10 items-center justify-center rounded-full font-medium transition-all duration-300',
                 currentPage === page
-                  ? 'bg-ns-linen text-white'
-                  : 'text-tagline-2 hover:bg-ns-linen/70 cursor-pointer hover:text-white',
+                  ? 'bg-ordrat-red-main text-white'
+                  : 'text-tagline-2 hover:bg-ordrat-red-main/80 cursor-pointer hover:text-white',
               )}>
               {page}
             </button>
@@ -115,8 +115,8 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange, class
         <button
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          className="border-stroke-3 hover:bg-ns-linen stroke-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border duration-300 hover:stroke-white disabled:cursor-not-allowed">
-          <span>
+          className="border-stroke-3 hover:bg-ordrat-red-main stroke-secondary flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border duration-300 hover:stroke-white disabled:cursor-not-allowed">
+          <span className="rtl:-scale-x-100">
             <svg xmlns="http://www.w3.org/2000/svg" width={14} height={12} viewBox="0 0 14 12" fill="none">
               <path
                 d="M1.5 6H12.5M12.5 6L8 1.5M12.5 6L8 10.5"

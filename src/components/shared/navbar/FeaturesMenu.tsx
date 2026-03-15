@@ -9,50 +9,9 @@ import {
   UseCaseIcon,
   WhyChooseUsIcon,
 } from '@/icons/menu-icon';
+import { useLocale } from '@/context/LocaleContext';
 import { cn } from '@/utils/cn';
-import nsImg420 from '@public/images/ns-img-420.jpg';
-import Image from 'next/image';
 import CompanyMenuItemLink from './FeaturesMenuItemLink';
-
-interface MenuItemProps {
-  id: string;
-  href: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}
-
-const leftColumnMenuItems: MenuItemProps[] = [
-
-  {
-    id: 'store-types',
-    href: '/store-types',
-    title: 'Store Types',
-    description: 'Explore our solutions for different store types',
-    icon: <ServiceIcon className="size-5" />,
-  },
-  {
-    id: 'ordering-system',
-    href: '/ordering-system',
-    title: 'Ordering System',
-    description: 'Streamline your ordering process with our intuitive system',
-    icon: <AboutIcon className="size-5" />,
-  },
-  {
-    id: 'order-onsite',
-    href: '/order-onsite',
-    title: 'On-site Ordering',
-    description: 'On-site ordering system for your restaurant',
-    icon: <WhyChooseUsIcon />,
-  },
-  {
-    id: 'qr-code-menu',
-    href: '/qr-code-menu',
-    title: 'QR Code Menu',
-    description: 'Easy-to-use QR code menu system for your restaurant',
-    icon: <ServiceIcon />,
-  },
-];
 
 const CompanyMenu = ({
   menuDropdownId,
@@ -61,6 +20,39 @@ const CompanyMenu = ({
   menuDropdownId: string | null;
   setMenuDropdownId: (id: string | null) => void;
 }) => {
+  const { t } = useLocale();
+
+  const leftColumnMenuItems = [
+    {
+      id: 'store-types',
+      href: '/store-types',
+      title: t('navbar.featuresMenu.storeTypes'),
+      description: t('navbar.featuresMenu.storeTypesDesc'),
+      icon: <ServiceIcon className="size-5" />,
+    },
+    {
+      id: 'ordering-system',
+      href: '/ordering-system',
+      title: t('navbar.featuresMenu.orderingSystem'),
+      description: t('navbar.featuresMenu.orderingSystemDesc'),
+      icon: <AboutIcon className="size-5" />,
+    },
+    {
+      id: 'order-onsite',
+      href: '/order-onsite',
+      title: t('navbar.featuresMenu.onsiteOrdering'),
+      description: t('navbar.featuresMenu.onsiteOrderingDesc'),
+      icon: <WhyChooseUsIcon />,
+    },
+    {
+      id: 'qr-code-menu',
+      href: '/qr-code-menu',
+      title: t('navbar.featuresMenu.qrCodeMenu'),
+      description: t('navbar.featuresMenu.qrCodeMenuDesc'),
+      icon: <ServiceIcon />,
+    },
+  ];
+
   return (
     <div>
       <div
@@ -99,8 +91,8 @@ const CompanyMenu = ({
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
               href="/marketing-tools"
-              title="Marketing Tools"
-              description="Boost your sales with our marketing tools"
+              title={t('navbar.featuresMenu.marketingTools')}
+              description={t('navbar.featuresMenu.marketingToolsDesc')}
               icon={<UseCaseIcon />}
               showDivider={true}
             />
@@ -108,24 +100,24 @@ const CompanyMenu = ({
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
               href="/free-setup-service"
-              title="Free Setup Service"
-              description="Get your store up and running for free"
+              title={t('navbar.featuresMenu.freeSetup')}
+              description={t('navbar.featuresMenu.freeSetupDesc')}
               icon={<CaseStudyICon />}
               showDivider={true}
             />
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
               href="/reservations"
-              title="Reservations System"
-              description="Book a demo or consultation with our team"
+              title={t('navbar.featuresMenu.reservations')}
+              description={t('navbar.featuresMenu.reservationsDesc')}
               icon={<CaseStudyICon />}
               showDivider={true}
             />
             <CompanyMenuItemLink
               setMenuDropdownId={setMenuDropdownId}
               href="/website-templates"
-              title="Website Templates"
-              description="Pre-designed templates for your business"
+              title={t('navbar.featuresMenu.websiteTemplates')}
+              description={t('navbar.featuresMenu.websiteTemplatesDesc')}
               icon={<CustomersIcon />}
               showDivider={false}
             />

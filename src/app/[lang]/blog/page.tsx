@@ -1,6 +1,8 @@
 import BlogShowcase from '@/components/blog/BlogShowcase';
 import FeaturedBlog from '@/components/blog/FeaturedBlog';
-import CTA from '@/components/shared/cta/CTA';
+import BlogCTA from '@/components/blog/BlogCTA';
+import { IBlogPost } from '@/interface';
+import getMarkDownData from '@/utils/getMarkDownData';
 import { defaultMetadata } from '@/utils/generateMetaData';
 import { Metadata } from 'next';
 
@@ -10,17 +12,14 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
+  const allBlogs = getMarkDownData<IBlogPost & { [key: string]: unknown }>('src/data/blogs');
+  const featuredBlogs: IBlogPost[] = allBlogs.filter((blog) => blog.featured === true).slice(0, 3);
+
   return (
     <main className="bg-white">
-      <FeaturedBlog />
-      <BlogShowcase />
-      <CTA
-        className="bg-white"
-        badgeText="Get started"
-        ctaHeading="Build a complete website using the assistance"
-        description="Start your free trial today and see your ideas come to life easily and creatively."
-        ctaBtnText="Get started"
-      />
+      <FeaturedBlog featuredBlogs={featuredBlogs} />
+      <BlogShowcase blogs={allBlogs} />
+      <BlogCTA />
     </main>
   );
 };

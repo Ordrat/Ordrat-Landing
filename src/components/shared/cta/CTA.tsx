@@ -8,6 +8,7 @@ interface CTAV1Props {
   badgeClass?: string;
   ctaHeading?: string;
   spanText?: string;
+  spanClass?: string;
   description?: string;
   ctaBtnText?: string;
   badgeText?: string;
@@ -16,6 +17,9 @@ interface CTAV1Props {
   listTextClass?: string;
   inputFieldClass?: string;
   checkListVariant?: 'default' | 'gray';
+  ctaBtnClass?: string;
+  checkIconBgClass?: string;
+  ctaCheckListData?: { id: string; text: string }[];
 }
 
 const CTA = ({
@@ -23,6 +27,7 @@ const CTA = ({
   badgeClass,
   ctaHeading,
   spanText,
+  spanClass,
   description,
   ctaBtnText,
   badgeText,
@@ -31,12 +36,20 @@ const CTA = ({
   listTextClass,
   inputFieldClass,
   checkListVariant = 'default',
+  ctaBtnClass,
+  checkIconBgClass,
+  ctaCheckListData,
 }: CTAV1Props) => {
+  const checkListItems = ctaCheckListData ?? [
+    { id: '1', text: 'No credit card required' },
+    { id: '2', text: '14-Day free trial' },
+  ];
+
   return (
     <section className={cn('py-[50px] md:py-20 lg:py-28', className)} aria-label="cta section">
       <div className="main-container">
-        <div className="xl :gap-0 flex flex-col items-center justify-between gap-8 xl:flex-row">
-          <div className="mx-3 max-w-[649px] space-y-3 text-center sm:mx-0 md:w-full xl:text-left">
+        <div className="xl:gap-0 flex flex-col items-center justify-between gap-8 xl:flex-row">
+          <div className="mx-3 max-w-[649px] space-y-3 text-center sm:mx-0 md:w-full xl:text-start">
             {badgeText && (
               <RevealAnimation delay={0.3}>
                 <span className={cn('badge badge-ivory', badgeClass)}>{badgeText}</span>
@@ -47,7 +60,7 @@ const CTA = ({
               <RevealAnimation delay={badgeText ? 0.4 : 0.3}>
                 <h2 className={cn('md:text-heading-2 text-heading-5', headingClass)} aria-label="cta-heading">
                   {ctaHeading}
-                  {spanText && <span className="text-ns-oatmeal"> {spanText} </span>}
+                  {spanText && <span className={cn('text-ns-oatmeal', spanClass)}> {spanText} </span>}
                 </h2>
               </RevealAnimation>
               <RevealAnimation delay={badgeText ? 0.5 : 0.4}>
@@ -59,22 +72,14 @@ const CTA = ({
           </div>
           {/* newsletter form  */}
           <div
-            className={cn('w-full max-w-[562px] space-y-6 lg:pl-9', badgeText && 'mt-[40px] space-y-6 lg:mt-[67px]')}>
-            <CtaInputForm ctaBtnText={ctaBtnText} inputFieldClass={inputFieldClass} />
+            className={cn('w-full max-w-[562px] space-y-6 lg:ps-9', badgeText && 'mt-[40px] space-y-6 lg:mt-[67px]')}>
+            <CtaInputForm ctaBtnText={ctaBtnText} inputFieldClass={inputFieldClass} ctaBtnClass={ctaBtnClass} />
             <CTACheckList
               className="gap-x-4 gap-y-5 sm:gap-x-6 sm:gap-y-0 xl:justify-start"
-              ctaCheckListData={[
-                {
-                  id: '1',
-                  text: 'No credit card required',
-                },
-                {
-                  id: '2',
-                  text: '14-Day free trial',
-                },
-              ]}
+              ctaCheckListData={checkListItems}
               listTextClass={cn(listTextClass, 'text-secondary')}
               checkListVariant={checkListVariant}
+              checkIconBgClass={checkIconBgClass}
             />
           </div>
         </div>

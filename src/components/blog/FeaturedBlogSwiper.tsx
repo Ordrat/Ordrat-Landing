@@ -1,4 +1,5 @@
 'use client';
+import { useLocale } from '@/context/LocaleContext';
 import { IBlogPost } from '@/interface';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,6 +15,8 @@ interface FeaturedBlogSwiperProps {
 }
 
 const FeaturedBlogSwiper = ({ featuredBlogs }: FeaturedBlogSwiperProps) => {
+  const { t } = useLocale();
+
   return (
     <RevealAnimation delay={0.3}>
       <div className="relative">
@@ -49,35 +52,35 @@ const FeaturedBlogSwiper = ({ featuredBlogs }: FeaturedBlogSwiperProps) => {
                       className="h-full w-full object-cover"
                     />
                   </figure>
-                  <div className="bg-ns-ivory space-y-6 rounded-b-[20px] px-4 py-8 md:p-8">
+                  <div className="bg-ordrat-red-main space-y-6 rounded-b-[20px] px-4 py-8 md:p-8">
                     <div className="flex items-center gap-2">
                       <Link href={`/blog?category=${blog.tag.toLowerCase()}`}>
-                        <span className="badge badge-white text-secondary mr-1">{blog.tag}</span>
+                        <span className="badge me-1 bg-secondary text-accent">{blog.tag}</span>
                       </Link>
-                      <span rel="author" className="text-tagline-3 text-secondary/60 font-normal">
+                      <span rel="author" className="text-tagline-3 text-accent font-normal">
                         {blog.author}
                       </span>
-                      <span className="h-[6px] w-[5px] rounded-full bg-[#ECE8FF]"> </span>
-                      <time dateTime={blog.publishDate} className="text-tagline-3 text-secondary/60 font-normal">
+                      <span className="h-[6px] w-[5px] rounded-full bg-secondary"> </span>
+                      <time dateTime={blog.publishDate} className="text-tagline-3 text-accent font-normal">
                         {blog.publishDate}
                       </time>
                     </div>
                     <div>
-                      <h3 className="sm:text-heading-5 text-tagline-1 mb-2 font-normal">
+                      <h3 className="sm:text-heading-5 text-tagline-1 mb-2 text-accent font-normal">
                         <Link href={`/blog/${blog.slug}`} aria-label={`Read full article about ${blog.title}`}>
                           {blog.title}
                         </Link>
                       </h3>
-                      <p className="sm:text-tagline-1 text-tagline-2 text-secondary/60 font-normal">
+                      <p className="sm:text-tagline-1 text-tagline-2 text-accent/90 font-normal">
                         {blog.description}
                       </p>
                     </div>
                     <div>
                       <LinkButton
                         href={`/blog/${blog.slug}`}
-                        btnClass="btn-secondary-v2 group-hover/btn-v2:btn-primary-v2 btn-md-v2 "
+                        btnClass="bg-ordrat-red-main text-accent btn-arrow-white hover:bg-secondary hover:text-accent btn-md-v2"
                         aria-label={`Read full article about ${blog.title}`}>
-                        Read more
+                        {t('blog.readMore')}
                       </LinkButton>
                     </div>
                   </div>

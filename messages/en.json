@@ -10,7 +10,25 @@
     "search": "Search",
     "signIn": "Sign in",
     "startFree": "Start for free",
-    "localeMenuLabel": "Choose language"
+    "localeMenuLabel": "Choose language",
+    "featuresMenu": {
+      "storeTypes": "Store Types",
+      "storeTypesDesc": "Explore our solutions for different store types",
+      "orderingSystem": "Ordering System",
+      "orderingSystemDesc": "Streamline your ordering process with our intuitive system",
+      "onsiteOrdering": "On-site Ordering",
+      "onsiteOrderingDesc": "On-site ordering system for your restaurant",
+      "qrCodeMenu": "QR Code Menu",
+      "qrCodeMenuDesc": "Easy-to-use QR code menu system for your restaurant",
+      "marketingTools": "Marketing Tools",
+      "marketingToolsDesc": "Boost your sales with our marketing tools",
+      "freeSetup": "Free Setup Service",
+      "freeSetupDesc": "Get your store up and running for free",
+      "reservations": "Reservations System",
+      "reservationsDesc": "Book a demo or consultation with our team",
+      "websiteTemplates": "Website Templates",
+      "websiteTemplatesDesc": "Pre-designed templates for your business"
+    }
   },
   "topHeading": {
     "primary": "Ordrat is your partner for faster e-commerce growth.",
@@ -145,35 +163,45 @@
       "yearSuffix": "/Year",
       "plans": {
         "free": {
-          "title": "Free Plan",
-          "description": "Core voice features",
+          "title": "Trial Plan",
+          "description": "Suitable for: Individuals and startups who want to start an online store free.",
+          "priceLabel": "Free",
           "features": [
-            "Limited voice time",
-            "Basic voice styles",
-            "Watermarked output",
-            "Customizable voice styles"
+            "Orders Limited",
+            "Add Products Limited",
+            "Whatsapp Marketing Tools Limited",
+            "Cloud-Based POS System Limited",
+            "Add Branches Limited",
+            "Visits Count Limited"
           ]
         },
         "pro": {
-          "title": "Pro Plan",
-          "description": "Advanced features + app publishing",
+          "title": "Saving Plan",
+          "description": "Suitable for: Advanced traders who want more professional tools and pay as you go.",
+          "popularLine": "most popular",
+          "priceLabel": "50 pt / For Order",
           "features": [
-            "Extended voice time",
-            "Premium voice styles",
-            "30+ languages",
-            "No watermarks",
-            "Priority support",
-            "API access"
+            "Orders 50pt / Order",
+            "Add Products Unlimited",
+            "Whatsapp Marketing Tools 5pt / Message",
+            "Cloud-Based POS System 50pt / Order",
+            "Add Branches Unlimited",
+            "Visits Count 1pt / Visit"
           ]
         },
         "team": {
-          "title": "Team Plan",
-          "description": "Collaboration, integrations & support",
+          "title": "VIP Plan",
+          "description": "Suitable for: Multi-branch stores and merchants who want to get the most out of the platform without limits.",
+          "priceLabel": "1,000 EGP / Monthly",
+          "yearlyPriceLabel": "10,000 EGP / Yearly",
+          "proBadge": "PRO",
           "features": [
-            "Unlimited voice time",
-            "All voice styles",
-            "30+ languages",
-            "Commercial license"
+            "Orders Unlimited",
+            "Add Products Unlimited",
+            "Whatsapp Marketing Tools Unlimited",
+            "Cloud-Based POS System Unlimited",
+            "Add Branches Unlimited",
+            "Visits Count Unlimited"
           ]
         },
         "enterprise": {
@@ -187,7 +215,82 @@
           ]
         }
       },
-      "getStarted": "Get started"
+      "getStarted": "Get started",
+      "startForFree": "Start for Free",
+      "subscribeNow": "Subscribe now",
+      "planComparison": "Plans Comparison",
+      "comparison": {
+        "title": "Select the pricing plan that best suits your needs.",
+        "cardsIncludedTitle": "What's included",
+        "cardsIncludedFeatures": [
+          "Order Count",
+          "Product Count",
+          "WhatsApp Marketing Tools",
+          "Cloud POS System",
+          "Branch Addition"
+        ],
+        "fullTableTitle": "Full Comparison Between All Plans",
+        "fullTableDescription": "Discover all features and choose the plan that fits your business needs",
+        "headers": {
+          "features": "Features",
+          "trial": "Trial",
+          "saving": "Saving",
+          "vip": "VIP"
+        },
+        "sections": {
+          "basicFeatures": "Basic Features",
+          "marketing": "Marketing",
+          "designCustomization": "Design & Customization",
+          "ecommerceGeneralFeatures": "E-commerce & General Features",
+          "analyticsReports": "Analytics & Reports",
+          "shippingPayment": "Shipping & Payment",
+          "supportManagement": "Support & Management",
+          "mobileApplications": "Mobile Applications"
+        },
+        "rows": {
+          "orderCount": { "label": "Order Count", "trial": "Limited", "saving": "50pt per order", "vip": "Unlimited" },
+          "productCount": { "label": "Product Count", "trial": "Limited", "saving": "Unlimited", "vip": "Unlimited" },
+          "cloudPosSystem": { "label": "Cloud POS System", "trial": "Limited", "saving": "50pt per order", "vip": "Unlimited" },
+          "visits": { "label": "Visits", "trial": "Limited", "saving": "5pt per visit", "vip": "Unlimited" },
+          "branchAddition": { "label": "Branch Addition", "trial": "Limited", "saving": "Unlimited", "vip": "Unlimited" },
+          "otpOrderVerification": { "label": "OTP Order Verification", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "productMobileApp": { "label": "Product Mobile App", "trial": "Soon", "saving": "Soon", "vip": "Soon" },
+          "whatsappMarketingTools": { "label": "WhatsApp Marketing Tools", "trial": "__CROSS__", "saving": "5pt per message", "vip": "Unlimited" },
+          "affiliateMarketingSystem": { "label": "Affiliate Marketing System", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "promotionalOffersDiscountCoupons": { "label": "Promotional Offers & Discount Coupons", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "promotionalDiscountReports": { "label": "Promotional & Discount Reports", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "hideAdvertisements": { "label": "Hide Advertisements", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "multiLanguageMultiCurrencySupport": { "label": "Multi-language & Multi-currency Support", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "fastUserFriendlyDesign": { "label": "Fast & User-friendly Design", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "designCustomizationCapability": { "label": "Design Customization Capability", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "defaultOrdratDomain": { "label": "Default Ordrat Domain", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "customDomainConnection": { "label": "Custom Domain Connection", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "completeOnlineStore": { "label": "Complete Online Store", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "searchEngineOptimization": { "label": "Search Engine Optimization (SEO)", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "qrCodeGeneration": { "label": "QR Code Generation", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "displayFakeSalesViews": { "label": "Display Fake Sales & Views", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "technicalSupportEmailChat": { "label": "Technical Support (Email & Chat)", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "googleSheetsMetaIntegration": { "label": "Google Sheets & Meta Integration", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "wishlistManagement": { "label": "Wishlist Management", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "geographicPerformanceMonitoring": { "label": "Geographic Performance Monitoring", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "abandonedCartLogs": { "label": "Abandoned Cart Logs", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "restaurantTableManagementSystem": { "label": "Restaurant Table Management System", "trial": "__CROSS__", "saving": "Add only 1 user", "vip": "__CHECK__" },
+          "storeManagementServices": { "label": "Store Management Services", "trial": "__CROSS__", "saving": "__CROSS__", "vip": "__CHECK__" },
+          "storeVisitAnalytics": { "label": "Store Visit Analytics", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "detailedSalesCustomerStatistics": { "label": "Detailed Sales & Customer Statistics", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "shippingDeliveryPerformanceAnalysis": { "label": "Shipping & Delivery Performance Analysis", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "timeTrendAnalysis": { "label": "Time Trend Analysis", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "abandonedCartAnalysis": { "label": "Abandoned Cart Analysis", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "conversionRateAnalysis": { "label": "Conversion Rate Analysis", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "returnsRefundAnalysis": { "label": "Returns & Refund Analysis", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "customDeliveryServiceAssignment": { "label": "Custom Delivery Service Assignment", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "ordratPlatformShipping": { "label": "Ordrat Platform Shipping", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "cashOnDelivery": { "label": "Cash on Delivery", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "addAssistantsSpecificPermissions": { "label": "Add Assistants with Specific Permissions", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "vipSupportDedicatedAccountManager": { "label": "VIP Support with Dedicated Account Manager", "trial": "__CROSS__", "saving": "__CROSS__", "vip": "__CHECK__" },
+          "merchantMobileApplication": { "label": "Merchant Mobile Application", "trial": "Soon", "saving": "Soon", "vip": "Soon" }
+        }
+      }
     },
     "cta": {
       "badge": "CTA",
@@ -196,6 +299,75 @@
       "titleSuffix": "today",
       "description": "Join thousands using NextSaaS to create lifelike voices—no mic, no hassle.",
       "button": "Book your free strategy call"
+    }
+  },
+  "sharedCta": {
+    "emailPlaceholder": "Enter your email"
+  },
+  "pricingPage": {
+    "features": {
+      "badge": "Reasons to select us",
+      "title": "Unmatched security performance",
+      "description": "This level of security is essential for businesses handling confidential information, financial transactions, and personal user data. With continuous monitoring and ai-driven threat analysis.",
+      "malwareRate": "% malware protection rate",
+      "malwareDesc": "Defend against infections, data breaches, and cyber-attacks.",
+      "integrityRate": "% software integrity",
+      "integrityDesc": "Shield systems from the most advanced cyber threats.",
+      "footprintRate": "X Lighter system footprint",
+      "footprintDesc": "Ensuring seamless operations without slowing down devices."
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Let us know how we can assist you",
+      "fullName": "Full Name",
+      "enterName": "Enter your name",
+      "email": "Email address",
+      "enterEmail": "Enter your email",
+      "message": "Message",
+      "enterMessage": "Enter your message",
+      "agreePrefix": "I agree with the",
+      "termsLink": "terms and conditions",
+      "submit": "Submit"
+    },
+    "benefits": {
+      "badge": "Benefits",
+      "title": "Meet customers where they are",
+      "description": "Deliver fast, seamless interactions with our AI-powered messaging platform—instant support, automated responses, and reduced wait times for meaningful engagement.",
+      "loyaltyTitle": "Loyalty",
+      "loyaltyDesc": "Strengthen customer relationships with contextual, real-time conversations.",
+      "speedTitle": "Speed",
+      "speedDesc": "Automate routine queries and let agents step in when needed.",
+      "personalizationTitle": "Personalization",
+      "personalizationDesc": "Use customer data to initiate tailored, interactive conversations."
+    },
+    "cta": {
+      "badge": "Get started",
+      "heading": "Build a complete website using the assistance",
+      "description": "Start your free trial today and see your ideas come to life easily and creatively.",
+      "button": "Get started",
+      "noCard": "No credit card required",
+      "freeTrial": "14-Day free trial"
+    }
+  },
+  "blog": {
+    "featured": {
+      "titlePrefix": "Latest articles published by",
+      "titleAccent": "Ordrat"
+    },
+    "showcase": {
+      "titlePrefix": "Our recent",
+      "titleAccent": "news & insights",
+      "description": "Our recent news and insights highlight the latest developments, achievements, and thought leadership shaping our journey forward. From product innovations and strategic partnerships to industry trends"
+    },
+    "readMore": "Read more",
+    "cta": {
+      "badge": "Get started",
+      "heading": "Build a complete shop using the assistance of",
+      "headingAccent": "Ordrat",
+      "description": "Start your free trial today and see your ideas come to life easily and creatively.",
+      "button": "Get started",
+      "noCard": "No credit card required",
+      "freeTrial": "14-Day free trial"
     }
   }
 }

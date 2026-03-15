@@ -1,23 +1,29 @@
+'use client';
+
+import { useLocale } from '@/context/LocaleContext';
 import { IBlogPost } from '@/interface';
-import getMarkDownData from '@/utils/getMarkDownData';
 import RevealAnimation from '../animation/RevealAnimation';
 import BlogPaginationWrapper from './BlogPaginationWrapper';
 
-const BlogShowcase = () => {
-  const blogs = getMarkDownData<IBlogPost & { [key: string]: unknown }>('src/data/blogs');
+interface BlogShowcaseProps {
+  blogs: IBlogPost[];
+}
+
+const BlogShowcase = ({ blogs }: BlogShowcaseProps) => {
+  const { t } = useLocale();
+
   return (
     <section className="py-14 md:py-16 lg:py-[88px] xl:py-[100px]">
       <div className="main-container">
         <div className="mb-10 space-y-3 text-center md:mb-[70px]">
           <RevealAnimation delay={0.1}>
             <h2>
-              Our recent <span className="text-ns-linen inline-block">news &amp; insights</span>
+              {t('blog.showcase.titlePrefix')} <span className="text-ordrat-red-main inline-block">{t('blog.showcase.titleAccent')}</span>
             </h2>
           </RevealAnimation>
           <RevealAnimation delay={0.2}>
             <p className="mx-auto max-w-[738px]">
-              Our recent news and insights highlight the latest developments, achievements, and thought leadership
-              shaping our journey forward. From product innovations and strategic partnerships to industry trends
+              {t('blog.showcase.description')}
             </p>
           </RevealAnimation>
         </div>

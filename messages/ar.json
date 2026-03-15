@@ -10,7 +10,25 @@
     "search": "بحث",
     "signIn": "تسجيل الدخول",
     "startFree": "ابدأ مجانًا",
-    "localeMenuLabel": "اختر اللغة"
+    "localeMenuLabel": "اختر اللغة",
+    "featuresMenu": {
+      "storeTypes": "أنواع المتاجر",
+      "storeTypesDesc": "استكشف حلولنا لأنواع المتاجر المختلفة",
+      "orderingSystem": "نظام الطلبات",
+      "orderingSystemDesc": "بسّط عملية الطلبات بنظامنا السهل",
+      "onsiteOrdering": "الطلب في الموقع",
+      "onsiteOrderingDesc": "نظام طلب في الموقع لمطعمك",
+      "qrCodeMenu": "قائمة QR Code",
+      "qrCodeMenuDesc": "نظام قائمة QR Code سهل الاستخدام لمطعمك",
+      "marketingTools": "أدوات التسويق",
+      "marketingToolsDesc": "عزّز مبيعاتك بأدوات التسويق لدينا",
+      "freeSetup": "خدمة الإعداد المجانية",
+      "freeSetupDesc": "جهّز متجرك وابدأ العمل مجانًا",
+      "reservations": "نظام الحجوزات",
+      "reservationsDesc": "احجز عرضًا تجريبيًا أو استشارة مع فريقنا",
+      "websiteTemplates": "قوالب المواقع",
+      "websiteTemplatesDesc": "قوالب جاهزة مصممة لنشاطك التجاري"
+    }
   },
   "topHeading": {
     "primary": "أوردرات، شريكك لنمو متجرك الإلكتروني بشكل أسرع.",
@@ -145,35 +163,45 @@
       "yearSuffix": "/سنة",
       "plans": {
         "free": {
-          "title": "الخطة المجانية",
-          "description": "ميزات أساسية",
+          "title": "الخطة التجريبية",
+          "description": "مناسب لـ: الأفراد والشركات الناشئة الذين يريدون بدء متجر إلكتروني مجانًا.",
+          "priceLabel": "مجانًا",
           "features": [
-            "وقت صوت محدود",
-            "أنماط صوت أساسية",
-            "مخرجات بعلامة مائية",
-            "قوالب صوت قابلة للتخصيص"
+            "الطلبات محدود",
+            "إضافة المنتجات محدود",
+            "أدوات تسويق واتساب محدود",
+            "نظام نقاط البيع السحابي محدود",
+            "إضافة الفروع محدود",
+            "عدد الزيارات محدود"
           ]
         },
         "pro": {
-          "title": "الخطة الاحترافية",
-          "description": "ميزات متقدمة + نشر التطبيق",
+          "title": "خطة التوفير",
+          "description": "مناسب لـ: التجار المتقدمين الذين يريدون أدوات أكثر احترافية والدفع حسب الاستخدام.",
+          "popularLine": "الأكثر شيوعًا",
+          "priceLabel": "50 نقطة / لكل طلب",
           "features": [
-            "وقت صوت ممتد",
-            "أنماط صوت مميزة",
-            "أكثر من 30 لغة",
-            "بدون علامة مائية",
-            "دعم أولوية",
-            "وصول API"
+            "الطلبات 50 نقطة / طلب",
+            "إضافة المنتجات غير محدود",
+            "أدوات تسويق واتساب 5 نقاط / رسالة",
+            "نظام نقاط البيع السحابي 50 نقطة / طلب",
+            "إضافة الفروع غير محدود",
+            "عدد الزيارات 1 نقطة / زيارة"
           ]
         },
         "team": {
-          "title": "خطة الفريق",
-          "description": "تعاون وتكاملات ودعم",
+          "title": "خطة VIP",
+          "description": "مناسب لـ: المتاجر متعددة الفروع والتجار الذين يريدون الاستفادة القصوى من المنصة بدون حدود.",
+          "priceLabel": "1,000 جنيه / شهريًا",
+          "yearlyPriceLabel": "10,000 جنيه / سنويًا",
+          "proBadge": "برو",
           "features": [
-            "وقت صوت غير محدود",
-            "جميع أنماط الصوت",
-            "أكثر من 30 لغة",
-            "ترخيص تجاري"
+            "الطلبات غير محدود",
+            "إضافة المنتجات غير محدود",
+            "أدوات تسويق واتساب غير محدود",
+            "نظام نقاط البيع السحابي غير محدود",
+            "إضافة الفروع غير محدود",
+            "عدد الزيارات غير محدود"
           ]
         },
         "enterprise": {
@@ -187,7 +215,82 @@
           ]
         }
       },
-      "getStarted": "ابدأ الآن"
+      "getStarted": "ابدأ الآن",
+      "startForFree": "ابدأ مجانًا",
+      "subscribeNow": "اشترك الآن",
+      "planComparison": "مقارنة الخطط",
+      "comparison": {
+        "title": "اختر خطة الأسعار التي تناسب احتياجاتك.",
+        "cardsIncludedTitle": "ما الذي تتضمنه الخطة",
+        "cardsIncludedFeatures": [
+          "عدد الطلبات",
+          "عدد المنتجات",
+          "أدوات تسويق واتساب",
+          "نظام نقاط البيع السحابي",
+          "إضافة الفروع"
+        ],
+        "fullTableTitle": "مقارنة كاملة بين جميع الخطط",
+        "fullTableDescription": "اكتشف جميع الميزات واختر الخطة الأنسب لاحتياجات نشاطك التجاري",
+        "headers": {
+          "features": "الميزات",
+          "trial": "التجريبية",
+          "saving": "التوفير",
+          "vip": "VIP"
+        },
+        "sections": {
+          "basicFeatures": "الميزات الأساسية",
+          "marketing": "التسويق",
+          "designCustomization": "التصميم والتخصيص",
+          "ecommerceGeneralFeatures": "ميزات التجارة الإلكترونية والميزات العامة",
+          "analyticsReports": "التحليلات والتقارير",
+          "shippingPayment": "الشحن والدفع",
+          "supportManagement": "الدعم والإدارة",
+          "mobileApplications": "تطبيقات الجوال"
+        },
+        "rows": {
+          "orderCount": { "label": "عدد الطلبات", "trial": "محدود", "saving": "50 نقطة لكل طلب", "vip": "غير محدود" },
+          "productCount": { "label": "عدد المنتجات", "trial": "محدود", "saving": "غير محدود", "vip": "غير محدود" },
+          "cloudPosSystem": { "label": "نظام نقاط البيع السحابي", "trial": "محدود", "saving": "50 نقطة لكل طلب", "vip": "غير محدود" },
+          "visits": { "label": "الزيارات", "trial": "محدود", "saving": "5 نقاط لكل زيارة", "vip": "غير محدود" },
+          "branchAddition": { "label": "إضافة الفروع", "trial": "محدود", "saving": "غير محدود", "vip": "غير محدود" },
+          "otpOrderVerification": { "label": "التحقق من الطلب عبر OTP", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "productMobileApp": { "label": "تطبيق الجوال للمنتج", "trial": "قريبًا", "saving": "قريبًا", "vip": "قريبًا" },
+          "whatsappMarketingTools": { "label": "أدوات تسويق واتساب", "trial": "__CROSS__", "saving": "5 نقاط لكل رسالة", "vip": "غير محدود" },
+          "affiliateMarketingSystem": { "label": "نظام التسويق بالعمولة", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "promotionalOffersDiscountCoupons": { "label": "العروض الترويجية وكوبونات الخصم", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "promotionalDiscountReports": { "label": "تقارير العروض والخصومات", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "hideAdvertisements": { "label": "إخفاء الإعلانات", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "multiLanguageMultiCurrencySupport": { "label": "دعم تعدد اللغات والعملات", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "fastUserFriendlyDesign": { "label": "تصميم سريع وسهل الاستخدام", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "designCustomizationCapability": { "label": "إمكانية تخصيص التصميم", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "defaultOrdratDomain": { "label": "نطاق Ordrat الافتراضي", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "customDomainConnection": { "label": "ربط نطاق مخصص", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "completeOnlineStore": { "label": "متجر إلكتروني متكامل", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "searchEngineOptimization": { "label": "تحسين محركات البحث (SEO)", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "qrCodeGeneration": { "label": "إنشاء رمز QR", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "displayFakeSalesViews": { "label": "عرض مبيعات ومشاهدات وهمية", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "technicalSupportEmailChat": { "label": "الدعم الفني (البريد والدردشة)", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "googleSheetsMetaIntegration": { "label": "تكامل Google Sheets وMeta", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "wishlistManagement": { "label": "إدارة قائمة الرغبات", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "geographicPerformanceMonitoring": { "label": "مراقبة الأداء الجغرافي", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "abandonedCartLogs": { "label": "سجلات السلة المتروكة", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "restaurantTableManagementSystem": { "label": "نظام إدارة طاولات المطعم", "trial": "__CROSS__", "saving": "إضافة مستخدم واحد فقط", "vip": "__CHECK__" },
+          "storeManagementServices": { "label": "خدمات إدارة المتجر", "trial": "__CROSS__", "saving": "__CROSS__", "vip": "__CHECK__" },
+          "storeVisitAnalytics": { "label": "تحليلات زيارات المتجر", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "detailedSalesCustomerStatistics": { "label": "إحصائيات مفصلة للمبيعات والعملاء", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "shippingDeliveryPerformanceAnalysis": { "label": "تحليل أداء الشحن والتوصيل", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "timeTrendAnalysis": { "label": "تحليل الاتجاه الزمني", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "abandonedCartAnalysis": { "label": "تحليل السلة المتروكة", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "conversionRateAnalysis": { "label": "تحليل معدل التحويل", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "returnsRefundAnalysis": { "label": "تحليل المرتجعات والاسترداد", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "customDeliveryServiceAssignment": { "label": "تعيين خدمة توصيل مخصصة", "trial": "__CHECK__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "ordratPlatformShipping": { "label": "شحن منصة Ordrat", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "cashOnDelivery": { "label": "الدفع عند الاستلام", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "addAssistantsSpecificPermissions": { "label": "إضافة مساعدين بصلاحيات محددة", "trial": "__CROSS__", "saving": "__CHECK__", "vip": "__CHECK__" },
+          "vipSupportDedicatedAccountManager": { "label": "دعم VIP مع مدير حساب مخصص", "trial": "__CROSS__", "saving": "__CROSS__", "vip": "__CHECK__" },
+          "merchantMobileApplication": { "label": "تطبيق التاجر للجوال", "trial": "قريبًا", "saving": "قريبًا", "vip": "قريبًا" }
+        }
+      }
     },
     "cta": {
       "badge": "ابدأ الآن",
@@ -196,6 +299,75 @@
       "titleSuffix": "اليوم",
       "description": "انضم إلى آلاف المتاجر التي تستخدم Ordrat لتسريع الطلبات وتحسين تجربة العملاء.",
       "button": "احجز استشارة مجانية"
+    }
+  },
+  "sharedCta": {
+    "emailPlaceholder": "أدخل بريدك الإلكتروني"
+  },
+  "pricingPage": {
+    "features": {
+      "badge": "لماذا تختارنا",
+      "title": "أداء أمني لا مثيل له",
+      "description": "هذا المستوى من الأمان ضروري للشركات التي تتعامل مع معلومات سرية ومعاملات مالية وبيانات المستخدمين الشخصية. مع المراقبة المستمرة وتحليل التهديدات بالذكاء الاصطناعي.",
+      "malwareRate": "% معدل الحماية من البرمجيات الخبيثة",
+      "malwareDesc": "الدفاع ضد العدوى وخروقات البيانات والهجمات الإلكترونية.",
+      "integrityRate": "% سلامة البرمجيات",
+      "integrityDesc": "حماية الأنظمة من أكثر التهديدات الإلكترونية تقدمًا.",
+      "footprintRate": "X أخف على النظام",
+      "footprintDesc": "ضمان عمليات سلسة دون إبطاء الأجهزة."
+    },
+    "contact": {
+      "badge": "تواصل معنا",
+      "title": "أخبرنا كيف يمكننا مساعدتك",
+      "fullName": "الاسم الكامل",
+      "enterName": "أدخل اسمك",
+      "email": "البريد الإلكتروني",
+      "enterEmail": "أدخل بريدك الإلكتروني",
+      "message": "الرسالة",
+      "enterMessage": "أدخل رسالتك",
+      "agreePrefix": "أوافق على",
+      "termsLink": "الشروط والأحكام",
+      "submit": "إرسال"
+    },
+    "benefits": {
+      "badge": "المزايا",
+      "title": "تواصل مع عملائك أينما كانوا",
+      "description": "قدّم تفاعلات سريعة وسلسة مع منصتنا المدعومة بالذكاء الاصطناعي — دعم فوري واستجابات آلية وأوقات انتظار أقل لتفاعل أكثر فعالية.",
+      "loyaltyTitle": "الولاء",
+      "loyaltyDesc": "عزّز علاقات العملاء من خلال محادثات فورية ومخصصة.",
+      "speedTitle": "السرعة",
+      "speedDesc": "أتمت الاستفسارات الروتينية ودع الوكلاء يتدخلون عند الحاجة.",
+      "personalizationTitle": "التخصيص",
+      "personalizationDesc": "استخدم بيانات العملاء لبدء محادثات تفاعلية ومخصصة."
+    },
+    "cta": {
+      "badge": "ابدأ الآن",
+      "heading": "أنشئ موقعًا متكاملًا بمساعدة أوردرات",
+      "description": "ابدأ تجربتك المجانية اليوم وشاهد أفكارك تتحقق بسهولة وإبداع.",
+      "button": "ابدأ الآن",
+      "noCard": "لا حاجة لبطاقة ائتمان",
+      "freeTrial": "تجربة مجانية لمدة 14 يومًا"
+    }
+  },
+  "blog": {
+    "featured": {
+      "titlePrefix": "أحدث المقالات المنشورة من",
+      "titleAccent": "أوردرات"
+    },
+    "showcase": {
+      "titlePrefix": "آخر",
+      "titleAccent": "أخبارنا ورؤانا",
+      "description": "تسلّط أحدث أخبارنا ورؤانا الضوء على آخر التطورات والإنجازات والقيادة الفكرية التي تشكّل مسيرتنا. من ابتكارات المنتجات والشراكات الاستراتيجية إلى اتجاهات الصناعة"
+    },
+    "readMore": "اقرأ المزيد",
+    "cta": {
+      "badge": "ابدأ الآن",
+      "heading": "أنشئ متجرًا متكاملًا بمساعدة",
+      "headingAccent": "أوردرات",
+      "description": "ابدأ تجربتك المجانية اليوم وشاهد أفكارك تتحقق بسهولة وإبداع.",
+      "button": "ابدأ الآن",
+      "noCard": "لا حاجة لبطاقة ائتمان",
+      "freeTrial": "تجربة مجانية لمدة 14 يومًا"
     }
   }
 }

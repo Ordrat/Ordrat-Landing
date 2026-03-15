@@ -216,7 +216,7 @@ Custome Swiper js styles
 }
 
 .blog-article-swiper .swiper-pagination-bullet-active {
-  @apply border-stroke-10 bg-ns-linen size-3.5 rounded-full;
+  @apply border-ordrat-red-main bg-ordrat-red-main size-3.5 rounded-full;
 }
 
 .blog-article-swiper .pagination-bullets {

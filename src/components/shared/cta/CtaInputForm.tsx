@@ -1,12 +1,19 @@
+'use client';
+
 import RevealAnimation from '@/components/animation/RevealAnimation';
+import { useLocale } from '@/context/LocaleContext';
 import { cn } from '@/utils/cn';
 
 interface CtaInputFormProps {
   ctaBtnText?: string;
   inputFieldClass?: string;
+  ctaBtnClass?: string;
 }
 
-const CtaInputForm = ({ ctaBtnText = 'Get Started', inputFieldClass }: CtaInputFormProps) => {
+const CtaInputForm = ({ ctaBtnText, inputFieldClass, ctaBtnClass }: CtaInputFormProps) => {
+  const { t } = useLocale();
+  const buttonText = ctaBtnText || t('sharedCta.emailPlaceholder');
+
   return (
     <RevealAnimation delay={0.4}>
       <form
@@ -18,7 +25,7 @@ const CtaInputForm = ({ ctaBtnText = 'Get Started', inputFieldClass }: CtaInputF
           type="email"
           name="email"
           id="userEmail"
-          placeholder="Enter your email"
+          placeholder={t('sharedCta.emailPlaceholder')}
           required
           className={cn(
             'placeholder:text-secondary/50 border-stroke-10 text-secondary focus-visible:outline-stroke-7 focus:border-ns-linen/80 h-12.5 w-[85%] rounded-full border px-[18px] py-3 font-normal placeholder:font-normal focus:outline-none focus-visible:outline-1 md:w-[430px] lg:w-[440px]',
@@ -32,6 +39,7 @@ const CtaInputForm = ({ ctaBtnText = 'Get Started', inputFieldClass }: CtaInputF
             type="submit"
             className={cn(
               'btn-lg-v2 btn-secondary-v2 group-hover/btn-v2:btn-primary-v2 mx-auto inline-flex h-12 w-full cursor-pointer items-center justify-center gap-1.5 rounded-full text-center font-medium text-nowrap lowercase transition-all duration-500 ease-in-out md:mx-0 md:h-auto md:w-auto',
+              ctaBtnClass,
             )}>
             <span className="inline-block transition-transform duration-300 ease-in-out first-letter:uppercase">
               {ctaBtnText}
