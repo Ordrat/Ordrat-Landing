@@ -151,7 +151,7 @@ const Pricing = () => {
     : t('home.pricing.plans.team.priceLabel');
 
   return (
-    <section className="pt-[120px] pb-16 md:pt-[160px] md:pb-20 lg:pb-[95px] xl:pb-[100px]">
+    <section className="bg-white pt-[120px] pb-16 md:pt-[160px] md:pb-20 lg:pb-[95px] xl:pb-[100px]">
       <RevealAnimation delay={0.1}>
         <div className="mx-auto w-full max-w-[1440px] px-5 md:px-6 lg:px-10 xl:px-16">
           {/* Header */}
