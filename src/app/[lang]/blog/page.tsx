@@ -8,7 +8,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: 'Blog - AI Voice Generator || NextSaaS',
+  title: 'Blog - Ordrat | Tips & Insights for Restaurant Owners',
+  description:
+    'Read the latest articles, tips, and insights on restaurant management, online ordering, and growing your food business with Ordrat.',
 };
 
 const page = () => {
